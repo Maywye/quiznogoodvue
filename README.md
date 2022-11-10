@@ -1,4 +1,4 @@
-# quiznogoodvue
+# QuizNoGoodVue
 
 ## Project setup
 ```
