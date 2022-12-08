@@ -13,8 +13,7 @@
             ],
             "correct_answer" : 1
         },
-{
-    "questions": [
+
         {
             "id" : 2,
             "cat": "Izno - Culturé",
@@ -28,8 +27,7 @@
             ],
             "correct_answer" : 0
         },
-{
-    "questions": [
+
         {
             "id" : 3,
             "cat": "Izno - Culturé",
@@ -43,8 +41,7 @@
             ],
             "correct_answer" : 3
         },
-{
-    "questions": [
+
         {
             "id" : 4,
             "cat": "Izno - Culturé",
@@ -58,8 +55,7 @@
             ],
             "correct_answer" : 3
         },
-{
-    "questions": [
+
         {
             "id" : 5,
             "cat": "Izno - Culturé",
@@ -73,8 +69,7 @@
             ],
             "correct_answer" : 1
         },
-{
-    "questions": [
+
         {
             "id" : 6,
             "cat": "Izno - Geek",
@@ -88,8 +83,7 @@
             ],
             "correct_answer" : 0
         },
-{
-    "questions": [
+
         {
             "id" : 7,
             "cat": "Izno - Geek",
@@ -103,8 +97,7 @@
             ],
             "correct_answer" : 2
         },
-{
-    "questions": [
+
         {
             "id" : 8,
             "cat": "Izno - Geek",
@@ -118,8 +111,7 @@
             ],
             "correct_answer" : 3
         },
-{
-    "questions": [
+
         {
             "id" : 9,
             "cat": "Izno - Geek",
@@ -133,8 +125,7 @@
             ],
             "correct_answer" : 1
         },
-{
-    "questions": [
+
         {
             "id" : 10,
             "cat": "Izno - Geek",
@@ -147,4 +138,6 @@
                 "Yamamoto Kiekasse"
             ],
             "correct_answer" : 0
-        },
+        }
+    ]
+}
