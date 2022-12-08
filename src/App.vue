@@ -2,6 +2,7 @@
   <div id="app">
     <div class="flex flex-col h-screen bg-[#502F4C]">
       <TheHeader />
+      <QuestionsModal />
       <TheFooter />
     </div>
   </div>
@@ -10,11 +11,13 @@
 <script>
 import TheHeader from './components/HeaderVue.vue';
 import TheFooter from './components/FooterVue.vue';
+import QuestionsModal from './components/QuestionsModal.vue';
 export default {
   name: 'App',
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    QuestionsModal
   }
 }
 </script>
