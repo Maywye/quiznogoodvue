@@ -20,23 +20,24 @@
 
             <div class=" grid grid-cols-6 mb-10 h-4/6 mt-5">
                 <div class="relative col-start-2 col-span-4 bg-[#f4f5f9] rounded-lg p-12">
-                    <p class="text-3xl text-center text-[#502F4C] text-bold font-bold">Catégorie : <span class="ml-10 text-base italic">Izno Cat'</span> </p>
+                    <p class="text-3xl text-center text-[#502F4C] text-bold font-bold">Catégorie : <span class="ml-10 text-base italic">{{questCatCurrent}}</span> </p>
 
-                    <p class="text-center mt-12 text-2xl text-[#000000]">Question : <span class="ml-10 italic">intitulé question intitulé question intitulé question intitulé question intitulé questionintitulé question intitulé question </span></p>
+                    <p class="text-center mt-12 text-2xl text-[#000000]">Question : <span class="ml-10 italic">{{questCurrent}} </span></p>
 
                     <form >
                         <div class="mt-20 mx-5 grid grid-cols-2 gap-x-4 gap-y-8 ">
                         <input class="hidden" name="radio1" id="radio1" type="radio"> 
-                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> Réponse 1</span>
+                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> {{questReponseCurrent[0]}}</span>
                         <input class="hidden " name="radio2" id="radio2"  type="radio">
-                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> Réponse 2</span>
+                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> {{questReponseCurrent[1]}}</span>
                         <input class="hidden" name="radio3" id="radio3"  type="radio">
-                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> Réponse 3</span>
+                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> {{questReponseCurrent[2]}}</span>
                         <input class="hidden" name="radio4" id="radio4"  type="radio">
-                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> Réponse 4</span>
+                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> {{questReponseCurrent[3]}}</span>
                         </div>
 
-                        <button class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5"> <span class="text-2xl italic text-[#F9F4F5] italic">valider</span> </button>
+                        <button class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click.prevent="questModif()"
+                        > <span class="text-2xl italic text-[#F9F4F5] italic">valider</span> </button>
                     </form>
                 </div> <!-- fin div contenant questions&réponses-->
             </div> <!-- fin div générant les colones-->
@@ -45,10 +46,52 @@
     </div>
 </template>
 <script>
+import axios from "axios";
 
 export default {
-    name: "QuestionsModal.vue"
-    
+    name: "QuestionsModal.vue",
+    data() {
+        return {
+            urlApiQuest : "http://localhost:3000/questions",
+
+            questAll : {},
+            questCurrent : "",
+            questReponseCurrent : [],
+            questCatCurrent : "",
+            questRandomIndex : -1
+
+        }
+    },
+    mounted() {
+        this.questAllGet()
+    },
+    methods: {
+        async questAllGet(){
+            this.questAll = await (await axios.get(this.urlApiQuest)).data;
+            this.RandomIndex(this.questAll)
+            this.questCurrent = this.questAll[this.questRandomIndex].question
+            this.questReponseCurrent = this.questAll[this.questRandomIndex].answers
+            this.questCatCurrent = this.questAll[this.questRandomIndex].cat
+
+            console.log(this.questAll)
+        },
+        questModif(){
+            if(this.questRandomIndex != -1){
+                this.questAll.splice([this.questRandomIndex],1)
+            }
+            this.RandomIndex(this.questAll)
+            this.questCurrent = this.questAll[this.questRandomIndex].question
+            this.questReponseCurrent = this.questAll[this.questRandomIndex].answers
+            this.questCatCurrent = this.questAll[this.questRandomIndex].cat
+
+            console.log(this.questAll)
+        },
+        RandomIndex(arr){
+            let tailleArr = arr.length
+            this.questRandomIndex = Math.floor(Math.random()*tailleArr)
+            console.log(this.questRandomIndex)
+        }
+    }
 }
 </script>
 <style>
