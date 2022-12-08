@@ -1,7 +1,7 @@
 <template lang="">
     <div>
-        <TheHeader />
-        <TheFooter />
+        <h1>titre</h1>
+
     </div>
 </template>
 <script>

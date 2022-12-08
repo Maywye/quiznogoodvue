@@ -8,7 +8,7 @@
         </div>
         <div class="absolute bottom-0 left-0 m-10">
             <p class="text-xl font-medium">Puisqu'on est <span class="font-black">sympa</span> on te propose un</p>
-            <p class="text-xl font-medium">retour sur la page d'accueil en cliquant <router-link class="italic underline hover:text-[#C8B8DB]" to="contact">ici</router-link> !</p>
+            <p class="text-xl font-medium">retour sur la page d'accueil en cliquant <router-link class="italic underline hover:text-[#C8B8DB]" to="/">ici</router-link> !</p>
         </div>
     </main>
     </div>

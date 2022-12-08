@@ -3,7 +3,7 @@
         <div class=" flex flex-wrap justify-between ml-10 mr-10 grid grid-cols-3">
             <div></div>
             <p class="block text-center content-center">        Copyright - QuizNoGood {{date}}        </p>
-            <a href="#" class="block text-end italic underline hover:text-[#C8B8DB]">Ne pas nous contacter</a>
+            <router-link class="block text-end italic underline hover:text-[#C8B8DB]" to="contact">Ne pas nous contacter</router-link>
         </div>
     </footer>
 </template>

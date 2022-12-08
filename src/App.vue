@@ -2,7 +2,7 @@
   <div id="app">
     <div class="flex flex-col h-screen bg-[#502F4C]">
       <TheHeader />
-
+      <router-view ></router-view>
       <TheFooter />
     </div>
   </div>
