@@ -3,7 +3,7 @@
         <nav class="bg-[#F9F4F5] border-gray-200  py-2.5 m-0 ">
             <div class=" flex justify-between items-center ml-20 mr-2">
                 <a href="#" class="flex items-center">
-                    <img alt="logo" id="logo"  src="../assets/logo.png" class="mr-3 h-6 sm:h-9">
+                    <img alt="logo" id="logo"  src="../assets/img/logo.png" class="mr-3 h-6 sm:h-9">
                 </a>
                     <ul class="flex flex-col p-4 mt-4  rounded-lg border  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
                       <li>
