@@ -7,7 +7,7 @@
                 </a>
                     <ul class="flex flex-col p-4 mt-4  rounded-lg border  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
                       <li>
-                        <button class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg"><i class="fa-solid fa-play"></i>     &emsp; Jouer</button>
+                        <button @click="toggleModal" class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg"><i class="fa-solid fa-play"></i>     &emsp; Jouer</button>
                       </li>
                       <li>
                         <button class="block py-2 pr-4 pl-3 text-lg text-[#502F4C] bg-[#C8B8DB] rounded-lg">Se connecter</button>
@@ -15,7 +15,7 @@
                     </ul>
                   </div> <!-- fin div première partie de navbar-->
 
-            <div class="hidden flex justify-end ml-20 mr-2">
+            <div v-show="modalOpen" class="flex justify-end ml-20 mr-2">
                     <ul class="flex flex-col p-4 mt-4  rounded-lg border  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
                         <li>
                             <button class="block px-8 text-lg text-[#502F4C] bg-[#F9F4F5] rounded-lg border-4 border-[#502F4C]"> Partie <br> rapide </button>
@@ -32,7 +32,17 @@
 
 <script>
 export default {
-    name: "TheHeader.vue"
+    name: "TheHeader.vue",
+    data(){
+      return{
+        modalOpen: false
+      }
+    },
+    methods:{
+      toggleModal() {
+            this.modalOpen = !this.modalOpen
+          }
+    }
     
 }
 </script>
