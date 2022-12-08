@@ -2,7 +2,9 @@
   <div id="app">
     <div class="flex flex-col h-screen bg-[#502F4C]">
       <TheHeader />
-      <router-view ></router-view>
+      <div class="mx-auto">
+        <router-view ></router-view>
+      </div>
       <TheFooter />
 
     </div>
@@ -22,5 +24,11 @@ export default {
 </script>
 
 <style>
-
+@font-face {
+    font-family: youreGone;
+    src: url(assets/fonts/youregone/youregone.ttf);
+}
+  h2{
+    font-family: 'youregone';
+  }
 </style>
