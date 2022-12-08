@@ -16,7 +16,7 @@
                 <span class="text-[#f4f5f9] text-4xl mt-5 mx-20 font-bold calibri"><i class="fa-sharp fa-solid fa-clock"></i>     &emsp; tempsRestant</span>
             </div>
 
-            <h3 class="text-5xl text-center text-[#f4f5f9] py-12">QUESTION <span class="ml-10 text-base italic">numQuest</span></h3>
+            <h3 class="text-5xl text-center text-[#f4f5f9] py-12">QUESTION <span class="ml-10 text-base italic">{{(totalRep+1)}}</span></h3>
 
             <div class=" grid grid-cols-6 mb-10 h-4/6 mt-5">
                 <div class="relative col-start-2 col-span-4 bg-[#f4f5f9] rounded-lg p-12">
@@ -26,13 +26,9 @@
 
                     <form >
                         <div class="mt-20 mx-5 grid grid-cols-2 gap-x-4 gap-y-8 ">
-                        <input class="hidden" name="radio1" id="radio1" type="radio"> 
-                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer" @click="selectAnswer(0)"> {{questReponseCurrent[0]}}</span>
-                        <input class="hidden " name="radio2" id="radio2"  type="radio">
+                        <span :class="'ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer'" @click="selectAnswer(0)"> {{questReponseCurrent[0]}}</span>
                         <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer" @click="selectAnswer(1)"> {{questReponseCurrent[1]}}</span>
-                        <input class="hidden" name="radio3" id="radio3"  type="radio">
                         <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer" @click="selectAnswer(2)"> {{questReponseCurrent[2]}}</span>
-                        <input class="hidden" name="radio4" id="radio4"  type="radio">
                         <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer" @click="selectAnswer(3)"> {{questReponseCurrent[3]}}</span>
                         </div>
 
@@ -78,7 +74,6 @@ export default {
             this.questReponseCurrent = this.questAll[this.questRandomIndex].answers
             this.questCatCurrent = this.questAll[this.questRandomIndex].cat
             this.questCorrectAnswer = this.questAll[this.questRandomIndex].correct_answer
-            console.log(typeof(this.selectedRep), typeof(this.questCorrectAnswer));
         },
         questModif(){
             this.totalRep ++
@@ -95,10 +90,11 @@ export default {
                 this.questCurrent = this.questAll[this.questRandomIndex].question
                 this.questReponseCurrent = this.questAll[this.questRandomIndex].answers
                 this.questCatCurrent = this.questAll[this.questRandomIndex].cat
-                this.questCorrectAnswer = this.questAll[this.questRandomIndex].correct_answerconsole.log(`Bonnes réponses: ${this.bonnesRep}`);
+                this.questCorrectAnswer = this.questAll[this.questRandomIndex].correct_answer
             }else{
                 this.showResult = !this.showResult
             }
+            this.selectedRep = -1
         },
         RandomIndex(arr){
             let tailleArr = arr.length
