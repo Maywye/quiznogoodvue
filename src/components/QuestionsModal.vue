@@ -11,7 +11,7 @@
             <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
                 
                 <a href="#" class="flex items-center">
-                    <img alt="logo" id="logo"  src="/assets/img/logo.png" class=" mr-3 mt-6 h-9 sm:h-12">
+                    <img alt="logo" id="logo"  src="../assets/img/logo.png" class=" mr-3 mt-6 h-9 sm:h-12">
                 </a>
                 <span class="text-[#f4f5f9] text-4xl mt-5 mx-20 font-bold calibri"><i class="fa-sharp fa-solid fa-clock"></i>     &emsp; tempsRestant</span>
             </div>
@@ -27,16 +27,16 @@
                     <form >
                         <div class="mt-20 mx-5 grid grid-cols-2 gap-x-4 gap-y-8 ">
                         <input class="hidden" name="radio1" id="radio1" type="radio"> 
-                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> {{questReponseCurrent[0]}}</span>
+                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer" @click="selectAnswer(0)"> {{questReponseCurrent[0]}}</span>
                         <input class="hidden " name="radio2" id="radio2"  type="radio">
-                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> {{questReponseCurrent[1]}}</span>
+                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer" @click="selectAnswer(1)"> {{questReponseCurrent[1]}}</span>
                         <input class="hidden" name="radio3" id="radio3"  type="radio">
-                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> {{questReponseCurrent[2]}}</span>
+                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer" @click="selectAnswer(2)"> {{questReponseCurrent[2]}}</span>
                         <input class="hidden" name="radio4" id="radio4"  type="radio">
-                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer"> {{questReponseCurrent[3]}}</span>
+                        <span class="ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer" @click="selectAnswer(3)"> {{questReponseCurrent[3]}}</span>
                         </div>
 
-                        <button class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click.prevent="questModif()"
+                        <button v-show="(selectedRep != -1)" class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click.prevent="questModif()"
                         > <span class="text-2xl italic text-[#F9F4F5] italic">valider</span> </button>
                     </form>
                 </div> <!-- fin div contenant questions&réponses-->
@@ -58,7 +58,12 @@ export default {
             questCurrent : "",
             questReponseCurrent : [],
             questCatCurrent : "",
-            questRandomIndex : -1
+            questRandomIndex : -1,
+            questCorrectAnswer: -1,
+            selectedRep: -1,
+            bonnesRep: 0,
+            totalRep: 0,
+            showResult: false
 
         }
     },
@@ -72,24 +77,35 @@ export default {
             this.questCurrent = this.questAll[this.questRandomIndex].question
             this.questReponseCurrent = this.questAll[this.questRandomIndex].answers
             this.questCatCurrent = this.questAll[this.questRandomIndex].cat
-
-            console.log(this.questAll)
+            this.questCorrectAnswer = this.questAll[this.questRandomIndex].correct_answer
+            console.log(typeof(this.selectedRep), typeof(this.questCorrectAnswer));
         },
         questModif(){
-            if(this.questRandomIndex != -1){
-                this.questAll.splice([this.questRandomIndex],1)
-            }
-            this.RandomIndex(this.questAll)
-            this.questCurrent = this.questAll[this.questRandomIndex].question
-            this.questReponseCurrent = this.questAll[this.questRandomIndex].answers
-            this.questCatCurrent = this.questAll[this.questRandomIndex].cat
+            this.totalRep ++
+                if(this.selectedRep == this.questCorrectAnswer){
+                    this.bonnesRep ++
+                    alert("Bonne réponse, nullos !")
+                }else{
+                    alert("Mauvaise réponse, loser !!")
+                }
 
-            console.log(this.questAll)
+            if(this.questAll.length != 1){
+                this.questAll.splice([this.questRandomIndex],1)
+                this.RandomIndex(this.questAll)
+                this.questCurrent = this.questAll[this.questRandomIndex].question
+                this.questReponseCurrent = this.questAll[this.questRandomIndex].answers
+                this.questCatCurrent = this.questAll[this.questRandomIndex].cat
+                this.questCorrectAnswer = this.questAll[this.questRandomIndex].correct_answerconsole.log(`Bonnes réponses: ${this.bonnesRep}`);
+            }else{
+                this.showResult = !this.showResult
+            }
         },
         RandomIndex(arr){
             let tailleArr = arr.length
             this.questRandomIndex = Math.floor(Math.random()*tailleArr)
-            console.log(this.questRandomIndex)
+        },
+        selectAnswer(x){
+            this.selectedRep = x
         }
     }
 }
