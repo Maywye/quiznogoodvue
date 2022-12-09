@@ -29,9 +29,12 @@
 
             <div class=" grid grid-cols-6 mb-10 h-4/6 mt-5">
                 <div class="relative col-start-2 col-span-4 bg-[#f4f5f9] rounded-lg p-12">
-                    <button v-show="!questStart" class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click="questAllGet"> 
+                    <div v-show="!questStart">
+                        <p class="text-center text-2xl">Choose your IznoChallenge</p>
+                        <button  class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click="questAllGet"> 
                         <span class="text-2xl italic text-[#F9F4F5] italic">Commencer</span> 
                     </button>
+                    </div>
                     <div v-show="questStart">
                         <p class="text-3xl text-center text-[#502F4C] text-bold font-bold">Catégorie : <span class="ml-10 text-base italic">{{questCatCurrent}}</span> </p>
 
@@ -115,6 +118,7 @@ export default {
                 this.statusRep = "izno";
                 setTimeout(() => this.statusRep = "", 1250);
             }
+            this.selectedRep = -1
             setTimeout(() => {
                 if (this.questAll.length != 1) {
                     this.questAll.splice([this.questRandomIndex], 1);
@@ -159,38 +163,38 @@ export default {
         outline: solid 3px #502F4C;
     }
 
-    #countdown {
+#countdown {
   position: relative;
   margin: auto;
-  margin-top: 100px;
-  height: 40px;
-  width: 40px;
+  margin-top: 50px;
+  height: 80px;
+  width: 80px;
   text-align: center;
 }
 
 #countdown-number {
   color: white;
   display: inline-block;
-  line-height: 40px;
+  line-height: 80px;
 }
 
 svg {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   transform: rotateY(-180deg) rotateZ(-90deg);
 }
 
 svg circle {
-  stroke-dasharray: 113px;
+  stroke-dasharray: 226px;
   stroke-dashoffset: 0px;
   stroke-linecap: round;
-  stroke-width: 2px;
+  stroke-width: 4px;
   stroke: white;
   fill: none;
-  animation: countdown 10s linear infinite forwards;
+  animation: countdown 15s linear infinite forwards;
 }
 
 @keyframes countdown {
@@ -198,50 +202,7 @@ svg circle {
     stroke-dashoffset: 0px;
   }
   to {
-    stroke-dashoffset: 113px;
+    stroke-dashoffset: 226px;
   }
 }
-
-
-</style>#countdown {
-    position: relative;
-    margin: auto;
-    margin-top: 100px;
-    height: 80px;
-    width: 80px;
-    text-align: center;
-  }
-  
-  #countdown-number {
-    color: white;
-    display: inline-block;
-    line-height: 80px;
-  }
-  
-  svg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80px;
-    height: 80px;
-    transform: rotateY(-180deg) rotateZ(-90deg);
-  }
-  
-  svg circle {
-    stroke-dasharray: 226px;
-    stroke-dashoffset: 0px;
-    stroke-linecap: round;
-    stroke-width: 3px;
-    stroke: white;
-    fill: none;
-    animation: countdown 15s linear infinite forwards;
-  }
-  
-  @keyframes countdown {
-    from {
-      stroke-dashoffset: 0px;
-    }
-    to {
-      stroke-dashoffset: 226px;
-    }
-  }
+</style>
