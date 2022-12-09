@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="flex flex-col h-screen bg-[#502F4C]">
+    <div v-show="scoreModalOpen" class="flex flex-col h-screen bg-[#502F4C]">
     <div class="bg-[#502F4C] flex-1">
         
         <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
@@ -11,7 +11,7 @@
 
         <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
             <a href="#" class="flex items-center">
-                <img alt="logo" id="logo"  src="/assets/img/logo.png" class=" mr-3 mt-6 h-9 sm:h-12">
+                <img alt="logo" id="logo"  src="../assets/img/logo.png" class=" mr-3 mt-6 h-9 sm:h-12">
             </a>
             
         </div>
@@ -22,7 +22,7 @@
             <div class="relative col-start-2 col-span-4 bg-[#f4f5f9] rounded-lg p-12">
                 <p class="text-3xl text-center text-[#000000] text-bold font-bold">Vous avez obtenu le score de : </p>
 
-                <p class="text-center text-6xl text-[##502F4C] mt-48"><span class="italic">Score/20</span></p>
+                <p class="text-center text-6xl text-[##502F4C] mt-48"><span class="italic">{{bonnesRep}}/{{totalRep}}</span></p>
 
                 
                 <button class="px-12 py-4 bg-[#502F4C] rounded-lg absolute mt-44 right-64"> <span class="text-2xl  text-[#F9F4F5]">Rejouer</span> </button>
@@ -34,14 +34,17 @@
             
          </div> <!-- fin div générant les colones-->
 
-
-        <!-- Contact -->
-           
     </div>
     </div>
 </template>
 <script>
 export default {
+    name: "ScoreVue.vue",
+    props: [
+    "scoreModalOpen",
+    "bonnesRep",
+    "totalRep"
+    ]
     
 }
 </script>
