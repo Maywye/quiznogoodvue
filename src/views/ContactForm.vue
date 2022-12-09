@@ -19,7 +19,7 @@
                 </div>
                 <div class="mb-5">
                     <label for="msg" class="ml-4 text-lg text-[#502F4C] font-medium">Message</label>
-                    <textarea name="msg" id="msg" cols="100" rows="10" class="rounded-lg p-2 bg-[#C8B8DB] outline-[#502F4C] resize-none w-full" placeholder="Vraiment, c'est pas la peine d'écrire là dedans, de toute façon c'est pas comme si on allait lire ce message"></textarea>
+                    <textarea name="msg" id="msg" cols="100" rows="10" class="rounded-lg p-2 bg-[#C8B8DB] outline-[#502F4C] resize-none w-full placeholder-[#F9F4F5] italic" placeholder="Vraiment, c'est pas la peine d'écrire là dedans, de toute façon c'est pas comme si on allait lire ce message"></textarea>
                 </div>
                 <div>
                     <button type="submit" class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg">Envoyez</button>

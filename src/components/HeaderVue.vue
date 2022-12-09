@@ -2,15 +2,15 @@
        <header>
         <nav class="bg-[#F9F4F5] border-gray-200  py-2.5 m-0 ">
             <div class=" flex justify-between items-center ml-20 mr-2">
-                <a href="#" class="flex items-center">
-                    <img alt="logo" id="logo"  src="../assets/img/logo.png" class="mr-3 h-6 sm:h-9">
-                </a>
+              <router-link to="/"> 
+                <img alt="logo" id="logo"  src="../assets/img/logo.png" class="mr-3 h-6 sm:h-9">
+              </router-link>
                     <ul class="flex flex-col p-4 mt-4  rounded-lg border  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
                       <li>
                         <button @click="toggleModal" class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg"><i class="fa-solid fa-play"></i>     &emsp; Jouer</button>
                       </li>
                       <li>
-                        <button class="block py-2 pr-4 pl-3 text-lg text-[#502F4C] bg-[#C8B8DB] rounded-lg">Se connecter</button>
+                        <button class="block py-2 pr-4 pl-3 text-lg text-[#502F4C] bg-[#C8B8DB] rounded-lg"><router-link to="/connexion">Se connecter </router-link></button>
                       </li>
                     </ul>
                   </div> <!-- fin div première partie de navbar-->
