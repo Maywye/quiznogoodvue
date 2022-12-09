@@ -13,11 +13,13 @@
 <script>
 import TheHeader from './components/HeaderVue.vue';
 import TheFooter from './components/FooterVue.vue';
+import QuestionsModal from './components/QuestionsModal.vue';
 export default {
   name: 'App',
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    QuestionsModal
   }
 }
 </script>
