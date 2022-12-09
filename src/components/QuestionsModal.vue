@@ -162,32 +162,32 @@ export default {
     #countdown {
   position: relative;
   margin: auto;
-  margin-top: 100px;
-  height: 40px;
-  width: 40px;
+  margin-top: 50px;
+  height: 80px;
+  width: 80px;
   text-align: center;
 }
 
 #countdown-number {
   color: white;
   display: inline-block;
-  line-height: 40px;
+  line-height: 80px;
 }
 
 svg {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   transform: rotateY(-180deg) rotateZ(-90deg);
 }
 
 svg circle {
-  stroke-dasharray: 113px;
+  stroke-dasharray: 226px;
   stroke-dashoffset: 0px;
   stroke-linecap: round;
-  stroke-width: 2px;
+  stroke-width: 4px;
   stroke: white;
   fill: none;
   animation: countdown 10s linear infinite forwards;
@@ -198,7 +198,7 @@ svg circle {
     stroke-dashoffset: 0px;
   }
   to {
-    stroke-dashoffset: 113px;
+    stroke-dashoffset: 226px;
   }
 }
 
