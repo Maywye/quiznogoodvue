@@ -19,6 +19,7 @@
                     <div id="countdown-number">{{countDown}}</div>
                     <svg>
                         <circle r="36" cx="40" cy="40"></circle>
+                        <set restart="always"/>
                     </svg>
                     </div>
                 </span>
@@ -91,7 +92,8 @@ export default {
             timer: null,
 
             unselected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer",
-            selected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer quest"
+            selected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer quest",
+
         };
     },
     methods: {
@@ -151,7 +153,9 @@ export default {
                 }, 1000);
             }
             else {
-                this.questModif();
+                if(this.questAll.length != 1){
+                    this.questModif();
+                }
             }
         }
     },
