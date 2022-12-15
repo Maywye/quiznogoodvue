@@ -186,12 +186,12 @@
             "id" : 15,
             "cat": "Izno - Dév",
             "number" : 5,
-            "question" : " ",
+            "question" : " Lequel de ces langages est un langage de programmation ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Livia",
+                "Julia",
+                "Scalia",
+                "Alexa"
             ],
             "correct_answer" : 1
         },
@@ -199,66 +199,66 @@
             "id" : 16,
             "cat": "Izno - Dév",
             "number" : 6,
-            "question" : " ",
+            "question" : " Quelle est la plateforme en open source de python la plus connue ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Naga",
+                "Cobra",
+                "Anaconda",
+                "Boa"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 2
         },
         {
             "id" : 17,
             "cat": "Izno - Dév",
             "number" : 7,
-            "question" : " ",
+            "question" : " Lequel de ces framework n'est pas un framework d'automatisation / test ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Robot framework",
+                "Cerberus",
+                "Cucumber",
+                "Ultra Galaxy Super 2000"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 3
         },
         {
             "id" : 18,
             "cat": "Izno - Dév",
             "number" : 8,
-            "question" : " ",
+            "question" : " En CSS, comment afficher un texte barré ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "text-decoration: line-through;",
+                "<strike></strike>",
+                "{barré avec un crayon}",
+                "text-decoration: wavy overline lime;"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 0
         },
         {
             "id" : 19,
             "cat": "Izno - Dév",
             "number" : 9,
-            "question" : " ",
+            "question" : " Qu'est-ce qu'un framework ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Une application de support de développement",
+                "Un cadre-travail",
+                "Un ensemble d'outils et de composants logiciels",
+                "Angular"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 2
         },
         {
             "id" : 20,
             "cat": "Izno - Dév",
             "number" : 10,
-            "question" : " ",
+            "question" : " A quoi la notion de Scrum renvoie-t-elle ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Un agent pathogène",
+                "Une mêlée générale",
+                "Un rituel obscur",
+                "Un film d'horreur particulièrement glauque"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 2
         },
         {
             "id" : 21,
@@ -394,12 +394,12 @@
             "id" : 31,
             "cat": "Izno - Snob",
             "number" : 1,
-            "question" : " ",
+            "question" : "Que signifie le concept simpliste d'entéléchie ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Doctrine qui considère le monde comme un système de rapports entre moyens et fins.",
+                "Un ensemble de connaissances réglées (conception du monde, sciences, philosophies…) propres à un groupe social  ",
+                "Une personne qui est chiante en télé",
+                "Propension d'un être à viser sa propre perfection"
             ],
             "correct_answer" : 1
         },
@@ -407,25 +407,25 @@
             "id" : 32,
             "cat": "Izno - Snob",
             "number" : 2,
-            "question" : " ",
+            "question" : "Sur quel concept le plus simple le fonctionnement de la résonnance magnétique nucléaire repose-t-il ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Le magnétisme engendré par la détonation d'une bombe H",
+                "La résonnance entre les noyaux d'atomes, lorsqu'ils s'entrechoquent ",
+                "La résonnance suivant une courbe en cloche (courbe de Gauss) magnétique",
+                "Le changement de spin des éléctrons lorsqu'ils sont exposés à un champ magnétique"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 3
         },
         {
             "id" : 33,
             "cat": "Izno - Snob",
             "number" : 3,
-            "question" : " ",
+            "question" : "A quoi le mode mixolydien renvoie-t-il en musique théorique ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Le mode construit à partir du troisième degré de la gamme majeure",
+                "Il s'agit du mode construit sur le cinquième degré (dominante) de la gamme majeure",
+                "Le mode mineur le plus répandu de la gamme majeure",
+                "Le mode de musique le plus répendu dans les bars à Cocktail"
             ],
             "correct_answer" : 1
         },
@@ -433,51 +433,51 @@
             "id" : 34,
             "cat": "Izno - Snob",
             "number" : 4,
-            "question" : " ",
+            "question" : "Quelle élégante figure de style est réalisée à travers le segment textuel suivant : 'je t'aime - ou plutôt, je t'adore' ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Épanorthose",
+                "Aposiopèse",
+                "Antanaclase",
+                "Lâcheté"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 0
         },
         {
             "id" : 35,
             "cat": "Izno - Snob",
             "number" : 5,
-            "question" : " ",
+            "question" : "Quels types de rayons sont utilisés pour procéder à l'analyse de protéines cristallisées en cristallographie",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Les rayons de soleil",
+                "Les rayons Gamma",
+                "Les rayons Y",
+                "Les rayons X"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 3
         },
         {
             "id" : 36,
             "cat": "Izno - Snob",
             "number" : 6,
-            "question" : " ",
+            "question" : "Au plan pragmatico-énonciatif, quelle structure syntagmatique peut prétendre au statut d'unité minimale des discours monologaux par sa propension à la suffisance illocutoire ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "La phrase",
+                "La proposition",
+                "L'acte de langage",
+                "La réponse 4"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 2
         },
         {
             "id" : 37,
             "cat": "Izno - Snob",
             "number" : 7,
-            "question" : " ",
+            "question" : "Quel test les statistiques inférentielles proposent-elles pour vérifier la significativité de la covariance plurifactorielle ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "MANOVA",
+                "ANOVA",
+                "MAMAN Ô SEKKOUR",
+                "Le T de student"
             ],
             "correct_answer" : 1
         },
@@ -485,12 +485,12 @@
             "id" : 38,
             "cat": "Izno - Snob",
             "number" : 8,
-            "question" : " ",
+            "question" : "Laquelle des ces descriptions rend compte au plus juste de la pharmacodynamie des inhibiteurs sélectifs de recapture de la sérotonine ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Augmentation de la concentration sérotoninergique au niveau synaptique",
+                "Inhibition de la  dégradation des amines",
+                "Régulation des catécholamines",
+                "Ça veut dire imposer la force vers L'Ovalium, c'est-à-dire l'estime du savoir."
             ],
             "correct_answer" : 1
         },
@@ -498,25 +498,25 @@
             "id" : 39,
             "cat": "Izno - Snob",
             "number" : 9,
-            "question" : " ",
+            "question" : "En Spectrométrie de masse quel analyseur permet d'obtenir la meilleure résolution de la masse moléculaire ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "L'écran 144Hz 8K",
+                "Le quadripôle couplé à l'analyseur à temps de vol (Q-TOF)",
+                "Le triple quadripôle",
+                "L’analyseur à résonance cyclotronique d’ion (FT-ICR)"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 3
         },
         {
             "id" : 40,
             "cat": "Izno - Snob",
             "number" : 10,
-            "question" : " ",
+            "question" : "A quelle catégorie de variation sociolinguistique la variété des accets régionaux correspond-elle ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Variation diastratique",
+                "Variation diatopique",
+                "Variation diamésique",
+                "Variation diaclimatique"
             ],
             "correct_answer" : 1
         },
@@ -992,25 +992,25 @@
             "id" : 77,
             "cat": "Izno - Culturé",
             "number" : 7,
-            "question" : " ",
+            "question" : "Qui a reçu le prix Nobel de littérature en 2022 ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Annie Ernaux",
+                "Maeva Ghennam",
+                "Abdulrazak Gurnah",
+                "Alain Aspect"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 0
         },
         {
             "id" : 78,
             "cat": "Izno - Culturé",
             "number" : 8,
-            "question" : " ",
+            "question" : " Qui était la favorite de Louis XIV ?",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Louis-Dieudonné",
+                "Marquise de Montespan",
+                "Madame de Pompadour",
+                "Duchesse Julie de Gayet"
             ],
             "correct_answer" : 1
         },
@@ -1018,27 +1018,27 @@
             "id" : 79,
             "cat": "Izno - Culturé",
             "number" : 9,
-            "question" : " ",
+            "question" : " Qui est Eole ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "Le fils d'Arès",
+                "Le Dieu des énergies renouvelables",
+                "Le Dieu des océans",
+                "Le Dieu du vent"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 3
         },
         {
             "id" : 80,
             "cat": "Izno - Culturé",
             "number" : 10,
-            "question" : " ",
+            "question" : "Quelles sont les dimensions de La Joconde ? ",
             "answers" : [
-                "",
-                "",
-                "",
-                ""
+                "90 D",
+                "44 x 39 cm",
+                "77 x 53 cm",
+                "178 x 122 cm "
             ],
-            "correct_answer" : 1
+            "correct_answer" : 2
         },
         {
             "id" : 81,
