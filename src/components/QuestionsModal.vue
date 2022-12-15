@@ -32,6 +32,13 @@
                 <div class="relative col-start-2 col-span-4 bg-[#f4f5f9] rounded-lg p-12">
                     <div v-show="!questStart">
                         <p class="text-center text-2xl">Choose your IznoChallenge</p>
+                        <div class="mt-20 mx-5 grid grid-cols-2 gap-x-4 gap-y-8 ">
+                            <span :class="selectedCat == 0 ? selected : unselected" @click="selectCat(0)">Izno - Geek</span>
+                            <span :class="selectedCat == 1 ? selected : unselected" @click="selectCat(1)">Izno - Snob</span>
+                            <span :class="selectedCat == 2 ? selected : unselected" @click="selectCat(2)">Izno - Culturé</span>
+                            <span :class="selectedCat == 3 ? selected : unselected" @click="selectCat(3)">Izno - Dév</span>
+                            <span :class="selectedCat == 4 ? selected : unselected" @click="selectCat(4)">Aléatoire</span>
+                        </div>
                         <button  class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click="questAllGet"> 
                         <span class="text-2xl italic text-[#F9F4F5] italic">Commencer</span> 
                     </button>
@@ -74,12 +81,13 @@ export default {
 
             questStart: false,
 
-            questAll: {},
+            questAll: [],
             questCurrent: "",
             questReponseCurrent: [],
             questCatCurrent: "",
             questCorrectAnswer: -1,
 
+            selectedCat: -1,
             questRandomIndex: -1,
             selectedRep: -1,
             bonnesRep: 0,
@@ -99,7 +107,19 @@ export default {
     methods: {
         async questAllGet() {
             this.questStart = !this.questStart;
-            this.questAll = await (await axios.get(this.urlApiQuest)).data;
+            this.questAll = await (await axios.get(this.urlApiQuest)).data.filter(quest => quest.question.length > 1);
+
+            switch(this.selectedCat){
+                case 0 :this.questAll = this.questAll.filter(q => q.cat == "Izno - Geek");
+                    break;
+                case 1 :this.questAll = this.questAll.filter(q => q.cat == "Izno - Snob");
+                    break;
+                case 2 :this.questAll = this.questAll.filter(q => q.cat == "Izno - Culturé");
+                    break;
+                case 3 :this.questAll = this.questAll.filter(q => q.cat == "Izno - Dév");
+                    break;
+                
+            }
             this.RandomIndex(this.questAll);
             this.questCurrent = this.questAll[this.questRandomIndex].question;
             this.questReponseCurrent = this.questAll[this.questRandomIndex].answers;
@@ -107,6 +127,8 @@ export default {
             this.questCorrectAnswer = this.questAll[this.questRandomIndex].correct_answer;
             clearTimeout(this.timer);
             this.countDownTimer();
+            
+            
         },
         questModif() {
             clearTimeout(this.timer);
@@ -122,20 +144,21 @@ export default {
             }
             this.selectedRep = -1
             setTimeout(() => {
-                if (this.questAll.length != 1) {
+                if (this.totalRep < 10) {
                     this.questAll.splice([this.questRandomIndex], 1);
                     this.RandomIndex(this.questAll);
                     this.questCurrent = this.questAll[this.questRandomIndex].question;
                     this.questReponseCurrent = this.questAll[this.questRandomIndex].answers;
                     this.questCatCurrent = this.questAll[this.questRandomIndex].cat;
                     this.questCorrectAnswer = this.questAll[this.questRandomIndex].correct_answer;
+                    this.selectedRep = -1;
+                    this.countDown = 15;
+                    this.countDownTimer();
                 }
                 else {
                     this.scoreModalOpen = !this.scoreModalOpen;
                 }
-                this.selectedRep = -1;
-                this.countDown = 15;
-                this.countDownTimer();
+                
             }, 1250);
         },
         RandomIndex(arr) {
@@ -144,6 +167,9 @@ export default {
         },
         selectAnswer(x) {
             this.selectedRep = x;
+        },
+        selectCat(x) {
+            this.selectedCat = x;
         },
         countDownTimer() {
             if (this.countDown > 0) {

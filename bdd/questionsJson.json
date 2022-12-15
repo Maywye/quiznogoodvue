@@ -1,4 +1,11 @@
 {
+    "users": [
+        {
+            "email": "u@o.fr",
+            "password": "aiueo"
+        }
+    ],
+
     "questions": [
         {
             "id" : 1,
@@ -175,12 +182,12 @@
             "number" : 4,
             "question" : "Au 15 décembre 2022, quelle est la dénomination de la dernière version d'Ecmascript ?",
             "answers" : [
-                "10",
-                "11",
                 "13",
+                "12",
+                "10",
                 "1̵̐͋3̵̄̈́"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 0
         },
         {
             "id" : 15,
@@ -199,7 +206,7 @@
             "id" : 16,
             "cat": "Izno - Dév",
             "number" : 6,
-            "question" : " Quelle est la plateforme en open source de python la plus connue ? ",
+            "question" : " Quelle est la plateforme en open source de distribution de python la plus connue ? ",
             "answers" : [
                 "Naga",
                 "Cobra",
@@ -401,17 +408,17 @@
                 "Une personne qui est chiante en télé",
                 "Propension d'un être à viser sa propre perfection"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 3
         },
         {
             "id" : 32,
             "cat": "Izno - Snob",
             "number" : 2,
-            "question" : "Sur quel concept le plus simple le fonctionnement de la résonnance magnétique nucléaire repose-t-il ? ",
+            "question" : "Sur quel concept le plus simple le fonctionnement de la résonance magnétique nucléaire repose-t-il ? ",
             "answers" : [
                 "Le magnétisme engendré par la détonation d'une bombe H",
-                "La résonnance entre les noyaux d'atomes, lorsqu'ils s'entrechoquent ",
-                "La résonnance suivant une courbe en cloche (courbe de Gauss) magnétique",
+                "La résonance entre les noyaux d'atomes, lorsqu'ils s'entrechoquent ",
+                "La résonance suivant une courbe en cloche (courbe de Gauss) magnétique",
                 "Le changement de spin des éléctrons lorsqu'ils sont exposés à un champ magnétique"
             ],
             "correct_answer" : 3
@@ -479,7 +486,7 @@
                 "MAMAN Ô SEKKOUR",
                 "Le T de student"
             ],
-            "correct_answer" : 1
+            "correct_answer" : 0
         },
         {
             "id" : 38,
@@ -492,7 +499,7 @@
                 "Régulation des catécholamines",
                 "Ça veut dire imposer la force vers L'Ovalium, c'est-à-dire l'estime du savoir."
             ],
-            "correct_answer" : 1
+            "correct_answer" : 0
         },
         {
             "id" : 39,
