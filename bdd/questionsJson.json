@@ -102,7 +102,7 @@
             "id" : 8,
             "cat": "Izno - Geek",
             "number" : 8,
-            "question" : "Quel est le nom du chien à trois têtes dans Harry Potter et la Pierre Philosophale ?",
+            "question" : "Quel est le nom du chien à trois têtes dans Harry Potter à l'école des sorciers ?",
             "answers" : [
                 "Milou",
                 "Poilu",
@@ -262,7 +262,7 @@
             "answers" : [
                 "Un agent pathogène",
                 "Une mêlée générale",
-                "Un rituel obscur",
+                "Une pratique obscure composée de rites sinistres",
                 "Un film d'horreur particulièrement glauque"
             ],
             "correct_answer" : 2
@@ -440,7 +440,7 @@
             "id" : 34,
             "cat": "Izno - Snob",
             "number" : 4,
-            "question" : "Quelle élégante figure de style est réalisée à travers le segment textuel suivant : 'je t'aime - ou plutôt, je t'adore' ",
+            "question" : "Quelle élégante figure de style est réalisée à travers le segment textuel suivant : 'je t'aime - ou plutôt, je t'adore' ? ",
             "answers" : [
                 "Épanorthose",
                 "Aposiopèse",
@@ -453,7 +453,7 @@
             "id" : 35,
             "cat": "Izno - Snob",
             "number" : 5,
-            "question" : "Quels types de rayons sont utilisés pour procéder à l'analyse de protéines cristallisées en cristallographie",
+            "question" : "Quels types de rayons sont utilisés pour procéder à l'analyse de protéines cristallisées en cristallographie ?",
             "answers" : [
                 "Les rayons de soleil",
                 "Les rayons Gamma",

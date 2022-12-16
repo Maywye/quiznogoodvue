@@ -19,7 +19,7 @@
                 </div>
                 <div class="mb-5">
                     <label for="message" class="ml-4 text-lg text-[#502F4C] font-medium">Message</label>
-                    <textarea v-model="message" name="message" id="message" cols="100" rows="10" class="rounded-lg p-2 bg-[#C8B8DB] outline-[#502F4C] resize-none w-full placeholder-[#F9F4F5] italic" placeholder="Vraiment, c'est pas la peine d'écrire là dedans, de toute façon c'est pas comme si on allait lire ce message"></textarea>
+                    <textarea v-model="message" name="message" id="message" cols="100" rows="10" class="rounded-lg p-2 bg-[#C8B8DB] outline-[#502F4C] resize-none w-full placeholder-[#F9F4F5] italic" placeholder="Vraiment, c'est pas la peine d'écrire là dedans - de toute façon, c'est pas comme si on allait lire ce message"></textarea>
                 </div>
                 <div>
                     <button  type="submit" class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg">Envoyez</button>
@@ -43,14 +43,13 @@ export default {
   methods: {
     sendEmail(e) {
       try {
-        console.log(process.env);
         emailjs.sendForm(
-            'service_p2q5kmd',
-             'template_0mnvzp8',
-             e.target, 
-             '5vTLF9WdaGnQzP622',  {
-          from_name: this.name,
-          to_name: this.email,
+            process.env.VUE_APP_EMAIL_SERVICE_ID,
+            process.env.VUE_APP_EMAIL_TEMPLATE_ID,
+            e.target, 
+            process.env.VUE_APP_EMAIL_USER_ID,  {
+          name: this.name,
+          email: this.email,
           message: this.message
         })
             // Reset form field

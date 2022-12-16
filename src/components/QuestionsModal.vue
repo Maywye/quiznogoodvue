@@ -1,6 +1,56 @@
 <template>
     <div class="flex flex-col h-screen bg-[#502F4C] "  v-show="modalOpen" >
-        <ScoreVue :score-modal-open="scoreModalOpen" :bonnes-rep="bonnesRep" :total-rep="totalRep"></ScoreVue>
+        
+        <div v-show="scoreModalOpen" class="flex flex-col h-screen bg-[#502F4C]">
+            <div class="bg-[#502F4C] flex-1">
+                <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
+            <button @click.prevent="toogleModal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+        </div> <!--fin div bouton "x" fermeture modale-->
+
+        <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
+           
+        <img @click="fermer()"  alt="logo" id="logo"  src="../assets/img/logo.png" class="mr-3 h-6 sm:h-9">
+            
+            
+        </div>
+
+        <h3 class="text-5xl text-center text-[#f4f5f9] py-12">RESULTAT</h3>
+
+        <div class=" grid grid-cols-6 mb-10 h-4/6 mt-5">
+            <div class="relative col-start-2 col-span-4 bg-[#f4f5f9] rounded-lg p-12">
+                <p class="text-3xl text-center text-[#000000] text-bold font-bold">{{pseudo == '' ? "NAMELESS LOSER" : pseudo.toUpperCase()}}, vous avez obtenu le score de : </p>
+
+                <p class="text-center text-6xl text-[##502F4C] mt-12"><span class="italic">{{bonnesRep}}/{{totalRep + 1}}</span></p>
+
+                <div v-show="detailsDisplay">
+                  <div >
+                    <p class="mt-12 text-center text-2xl mb-8">Cliquez sur le numéro d'une question pour l'afficher : </p>
+                    <p class="text-xl mb-2 "><span class="text-[#F9F4F5] text-center w-12 my-3 rounded-xl  bg-emerald-400 py-1 px-2">Si la case est verte,</span> vous avez correctement répondu (vous emballez pas, c'est que de la <span class="font-bold">chance</span> !)</p>
+                    <p class="text-xl "><span class="text-[#F9F4F5] text-center w-12 my-3 rounded-xl  bg-rose-400 py-1 px-2">Si la case est rouge,</span> c'est que vous vous êtes <span class="font-bold">lamentablement</span> planté (aucune surprise ...)</p>
+                    <div class="grid grid-cols-10 mt-12">
+                        <div @click="displayCorpsQuest(quest.ordre)" v-for="quest in questRecap2" :key="quest.ordre" :class="quest.status == true ?' text-3xl text-[#F9F4F5] text-center aspect-square w-12 m-3 rounded-xl  bg-emerald-400 align-middle pt-1 cursor-pointer' : 'text-3xl text-[#F9F4F5] text-center aspect-square w-12 m-3 rounded-xl  bg-rose-400 align-middle pt-1 cursor-pointer' ">
+                            {{quest.ordre}}
+                        </div>
+                    </div>
+                  </div>  
+                  <div>
+                    <p v-show="questRecapDisplay" class="text-center text-xl mt-8 mb-16 sourceCode">{{questDisplay}}</p>
+                  </div>
+                </div>
+                
+                <button @click="rejouer()" class="px-12 py-4 bg-[#502F4C] rounded-lg absolute mt-44 bottom-6 right-12"> <span class="text-2xl  text-[#F9F4F5]">Rejouer</span> </button>
+
+                <a @click="detailsDisplay=!detailsDisplay" href="#" class="underline absolute mt-52 bottom-10 left-20 text-2xl"> Détails</a>
+
+              
+            </div> <!-- fin div contenant le score-->
+            
+         </div> <!-- fin div générant les colones-->
+            </div>
+        </div>
         <main v-show="!scoreModalOpen" class="bg-[#502F4C] flex-1 mb-20">
             <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
                 <button @click.prevent="toogleModal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
@@ -12,9 +62,9 @@
             <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
                 
                 <a href="#" class="flex items-center">
-                    <img alt="logo" id="logo"  src="../assets/img/logo.png" class=" mr-3 mt-6 h-9 sm:h-12">
+                    <img @click="fermer()" alt="logo" id="logo"  src="../assets/img/logo.png" class=" mr-3 mt-6 h-9 sm:h-12">
                 </a>
-                <span class="text-[#f4f5f9] text-4xl mt-5 mx-20 font-bold calibri">
+                <span v-show="questStart" class="text-[#f4f5f9] text-4xl mt-5 mx-20 font-bold calibri">
                     <div id="countdown">
                     <div id="countdown-number">{{countDown}}</div>
                     <svg>
@@ -26,7 +76,8 @@
                 
             </div>
 
-            <h3 class="text-5xl text-center text-[#f4f5f9] py-12">QUESTION <span class="ml-10 text-5xl">{{(totalRep+1)}}</span></h3>
+            <h3 v-show="questStart" class="text-5xl text-center text-[#f4f5f9] py-12">QUESTION <span class="ml-10 text-5xl">{{totalRep+1}}</span></h3>
+            <h3 v-show="!questStart" class="text-5xl text-center text-[#f4f5f9] py-12">PRÊT À SOUFFRIR, {{pseudo == '' ? "NAMELESS LOSER" : pseudo.toUpperCase()}} ?</h3>
 
             <div class=" grid grid-cols-6 mb-10 h-4/6 mt-5">
                 <div class="relative col-start-2 col-span-4 bg-[#f4f5f9] rounded-lg p-12">
@@ -39,9 +90,12 @@
                             <span :class="selectedCat == 3 ? selected : unselected" @click="selectCat(3)">Izno - Dév</span>
                             <span :class="selectedCat == 4 ? selected : unselected" @click="selectCat(4)">Aléatoire</span>
                         </div>
+                        <button  class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 left-5" @click="triche"> 
+                            <span class="text-2xl italic text-[#F9F4F5] italic">Triche</span> 
+                        </button>
                         <button  class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click="questAllGet"> 
-                        <span class="text-2xl italic text-[#F9F4F5] italic">Commencer</span> 
-                    </button>
+                            <span class="text-2xl italic text-[#F9F4F5] italic">Commencer</span> 
+                        </button>
                     </div>
                     <div v-show="questStart">
                         <p class="text-3xl text-center text-[#502F4C] text-bold font-bold">Catégorie : <span class="ml-10 text-base italic">{{questCatCurrent}}</span> </p>
@@ -59,7 +113,7 @@
                             <p v-show="statusRep == 'goud'" class=" col-start-2 col-span-3 text-emerald-500 text-2xl mt-14 font-bold" >Bonne réponse, nullos !</p>
                             <p v-show="statusRep == 'izno'" class=" col-start-2 col-span-3  text-rose-600 text-2xl mt-14 font-bold" >Mauvaise réponse, bougre d'âne !!</p>
                             <button v-show="(selectedRep != -1)" class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click.prevent="questModif()"
-                            > <span class="text-2xl italic text-[#F9F4F5] italic">valider</span> </button>
+                            > <span class="text-2xl italic text-[#F9F4F5] italic">Valider</span> </button>
                         </div>
                     </form>
                     </div><!-- fin div contenant v-show-->
@@ -70,11 +124,10 @@
 </template>
 <script>
 import axios from "axios";
-import ScoreVue from "./ScoreVue.vue";
 
 export default {
     name: "QuestionsModal.vue",
-    props: ["modalOpen", "toogleModal"],
+    props: ["modalOpen", "toogleModal", "pseudo"],
     data() {
         return {
             urlApiQuest: "http://localhost:3000/questions",
@@ -96,8 +149,14 @@ export default {
             scoreModalOpen: false,
             statusRep: "",
 
-            countDown: 15,
+            countDown: 20,
             timer: null,
+
+            detailsDisplay: false,
+            questRecap:[],
+            questRecap2: [],
+            questDisplay : "",
+            questRecapDisplay : false,
 
             unselected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer",
             selected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer quest",
@@ -126,13 +185,21 @@ export default {
             this.questCatCurrent = this.questAll[this.questRandomIndex].cat;
             this.questCorrectAnswer = this.questAll[this.questRandomIndex].correct_answer;
             clearTimeout(this.timer);
+            if(this.questCatCurrent == "Izno - Snob"){
+                this.countDown = 35  
+            }else{
+                this.countDown = 20;
+            }
             this.countDownTimer();
             
             
         },
+        triche(){
+            this.scoreModalOpen = true
+            this.questRecap2 = [{question: "blublu", ordre:1, status:true}, {question: "bloblo", ordre:2, status:false}, {question: "bleble", ordre:3, status:true}, {question: "Au plan pragmatico-énonciatif, quelle structure syntagmatique peut prétendre au statut d'unité minimale des discours monologaux par sa propension à la suffisance illocutoire ? ", ordre:4, status:false}]
+        },
         questModif() {
             clearTimeout(this.timer);
-            this.totalRep++;
             if (this.selectedRep == this.questCorrectAnswer) {
                 this.bonnesRep++;
                 this.statusRep = "goud";
@@ -142,9 +209,11 @@ export default {
                 this.statusRep = "izno";
                 setTimeout(() => this.statusRep = "", 1250);
             }
+            this.recapQuest()
+            console.log(this.questRecap[0].ordre);
             this.selectedRep = -1
             setTimeout(() => {
-                if (this.totalRep < 10) {
+                if (this.totalRep < 9) {
                     this.questAll.splice([this.questRandomIndex], 1);
                     this.RandomIndex(this.questAll);
                     this.questCurrent = this.questAll[this.questRandomIndex].question;
@@ -152,24 +221,48 @@ export default {
                     this.questCatCurrent = this.questAll[this.questRandomIndex].cat;
                     this.questCorrectAnswer = this.questAll[this.questRandomIndex].correct_answer;
                     this.selectedRep = -1;
-                    this.countDown = 15;
+                    if(this.questCatCurrent == "Izno - Snob"){
+                        this.countDown = 35  
+                    }else{
+                    this.countDown = 20;
+                    }
+                    this.totalRep++;
                     this.countDownTimer();
                 }
                 else {
                     this.scoreModalOpen = !this.scoreModalOpen;
+                    this.detailsDisplay = false
+                    this.questRecap2 = this.questRecap
                 }
                 
+                
             }, 1250);
+            
         },
         RandomIndex(arr) {
             let tailleArr = arr.length;
             this.questRandomIndex = Math.floor(Math.random() * tailleArr);
         },
         selectAnswer(x) {
-            this.selectedRep = x;
+            if(this.statusRep == ''){
+                this.selectedRep = x;
+            }
         },
         selectCat(x) {
             this.selectedCat = x;
+        },
+        recapQuest(){
+            if(this.statusRep == 'goud'){
+                this.questRecap.push({question: this.questCurrent,
+                                      ordre: this.totalRep+1,
+                                      status: true
+            })
+            }else{
+                this.questRecap.push({question: this.questCurrent,
+                                      ordre: this.totalRep+1,
+                                      status: false
+            })
+            }
         },
         countDownTimer() {
             if (this.countDown > 0) {
@@ -183,9 +276,35 @@ export default {
                     this.questModif();
                 }
             }
+        },
+        rejouer(){
+            this.scoreModalOpen = ! this.scoreModalOpen
+            this.questStart = !this.questStart
+            this.totalRep = 0
+            this.bonnesRep = 0
+            this.selectedCat = -1
+            this.countDown = 20
+            this.questRecap = []
+        },
+        fermer(){
+            this.rejouer()
+            this.scoreModalOpen = false
+            this.questStart = false
+            this.toogleModal()
+        },
+        displayCorpsQuest(x){
+           if(this.questDisplay == this.questRecap2[x-1].question && this.questRecapDisplay ==true){
+            this.questRecapDisplay = ! this.questRecapDisplay
+           }else if(this.questDisplay != this.questRecap2[x-1].question && this.questRecapDisplay ==true){
+            this.questDisplay = this.questRecap2[x-1].question
+           }else{
+            this.questDisplay = this.questRecap2[x-1].question
+            this.questRecapDisplay = ! this.questRecapDisplay
+           }
+
         }
     },
-    components: { ScoreVue }
+    
 }
 </script>
 <style>

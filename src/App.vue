@@ -27,7 +27,22 @@ export default {
     font-family: youreGone;
     src: url(assets/fonts/youregone/youregone.ttf);
 }
-  h2{
+@font-face {
+    font-family: sourceCodePro;
+    src: url(assets/fonts/sourcecode/sourcecodepro-regular.ttf);
+}
+@font-face {
+    font-family: sourceCodeProBold;
+    src: url(assets/fonts/sourcecode/SourceCodePro-Bold.ttf);
+}
+.sourceCode{
+  font-family: 'sourceCodePro';
+}
+.sourceCodeB{
+  font-family: 'sourceCodeProBold';
+}
+
+h2{
     font-family: 'youregone';
-  }
+}
 </style>
