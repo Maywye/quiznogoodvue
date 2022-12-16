@@ -64,11 +64,11 @@
                 <a href="#" class="flex items-center">
                     <img @click="fermer()" alt="logo" id="logo"  src="../assets/img/logo.png" class=" mr-3 mt-6 h-9 sm:h-12">
                 </a>
-                <span v-show="questStart" class="text-[#f4f5f9] text-4xl mt-5 mx-20 font-bold calibri">
+                <span v-show="cdwnStart" class="text-[#f4f5f9] text-4xl mt-5 mx-20 font-bold calibri">
                     <div id="countdown">
                     <div id="countdown-number">{{countDown}}</div>
                     <svg>
-                        <circle r="36" cx="40" cy="40"></circle>
+                        <circle :class="questCatCurrent == 'Izno - Snob' ? 'troisCinq' : 'deuxZer'" r="36" cx="40" cy="40"></circle>
                         <set restart="always"/>
                     </svg>
                     </div>
@@ -133,6 +133,7 @@ export default {
             urlApiQuest: "http://localhost:3000/questions",
 
             questStart: false,
+            cdwnStart: false,
 
             questAll: [],
             questCurrent: "",
@@ -166,6 +167,7 @@ export default {
     methods: {
         async questAllGet() {
             this.questStart = !this.questStart;
+            this.cdwnStart = !this.cdwnStart;
             this.questAll = await (await axios.get(this.urlApiQuest)).data.filter(quest => quest.question.length > 1);
 
             switch(this.selectedCat){
@@ -200,6 +202,7 @@ export default {
         },
         questModif() {
             clearTimeout(this.timer);
+            this.cdwnStart = false
             if (this.selectedRep == this.questCorrectAnswer) {
                 this.bonnesRep++;
                 this.statusRep = "goud";
@@ -228,6 +231,7 @@ export default {
                     }
                     this.totalRep++;
                     this.countDownTimer();
+                    this.cdwnStart = true
                 }
                 else {
                     this.scoreModalOpen = !this.scoreModalOpen;
@@ -280,6 +284,7 @@ export default {
         rejouer(){
             this.scoreModalOpen = ! this.scoreModalOpen
             this.questStart = !this.questStart
+            this.cdwnStart = false
             this.totalRep = 0
             this.bonnesRep = 0
             this.selectedCat = -1
@@ -290,6 +295,7 @@ export default {
             this.rejouer()
             this.scoreModalOpen = false
             this.questStart = false
+            this.cdwnStart = false
             this.toogleModal()
         },
         displayCorpsQuest(x){
@@ -343,7 +349,12 @@ svg circle {
   stroke-width: 4px;
   stroke: white;
   fill: none;
-  animation: countdown 15s linear infinite forwards;
+}
+.troisCinq{
+    animation: countdown 35s linear infinite forwards;
+}
+.deuxZer{
+    animation: countdown 20s linear infinite forwards;
 }
 
 @keyframes countdown {
