@@ -14,7 +14,7 @@
                 <div class="mb-5 md:grid md:grid-cols-2">
                     <label for="name" class="ml-4 text-lg text-[#502F4C] font-medium w-full">Pseudo</label>
                     <input v-model="name" type="text" name="name" id="name" class="rounded-lg px-2 py-3 mb-4 bg-[#C8B8DB] outline-[#502F4C] w-full">
-                    <label for="email" class="ml-4 text-lg text-[#502F4C] font-medium w-full">Adresse email</label>
+                    <label for="email" class="ml-4 text-lg text-[#502F4C] font-medium w-full">Adresse mail</label>
                     <input v-model="email" type="email" name="email" id="email" class="rounded-lg px-2 py-3 bg-[#C8B8DB] outline-[#502F4C] w-full">
                 </div>
                 <div class="mb-5">
