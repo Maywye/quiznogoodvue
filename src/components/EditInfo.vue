@@ -1,8 +1,8 @@
 <template>
-    <div class="col-start-2 col-span-10 bg-[#F9F4F5] m-6 p-10 rounded-lg md:col-start-7 lg:col-span-5 md:row-start-1 md:row-span-2 lg:m-12">
+    <div class="col-start-2 col-span-10 bg-[#F9F4F5] rounded-lg m-6 p-6 md:p-5 lg:row-start-1 lg:row-span-2 lg:col-start-8 lg:col-span-6 lg:m-12">
             <span>
                 <p class="text-md md:text-2xl">Modifier le mot de passe</p>
-                <form class="grid grid-cols-1 place-content-around md:mt-6 md:mb-24 md:mx-24">
+                <form class="grid grid-cols-1 place-content-around md:mt-6 md:mb-24 md:mx-12">
                     <label for="Pseudo" class="ml-4 text-sm text-[#502F4C] font-medium pt-8 md:text-lg">Nouveau mot de passe</label>
                     <input type="password" name="Pseudo" id="pseudo" class="rounded-lg px-2 py-1.5 bg-[#C8B8DB] outline-[#502F4C] w-full lg:mb-5 md:py-3">
                     <label for="mdp" class="ml-4 text-sm text-[#502F4C] font-medium pt-8 md:text-lg">Confirmation mot de passe</label>
