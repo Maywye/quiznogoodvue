@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-1 overflow-y-auto grid grid-cols-12">
+    <div class="overflow-y-auto grid grid-cols-12">
         <LogIn />
         <SignIn />
     </div>
