@@ -1,70 +1,68 @@
 <template>
     <div class="flex flex-col h-screen bg-[#502F4C] "  v-show="modalOpen" >
-        
         <div v-show="scoreModalOpen" class="flex flex-col h-screen bg-[#502F4C]">
-            <div class="bg-[#502F4C] flex-1">
+            <div class="bg-[#502F4C]">
                 <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
             <button @click.prevent="toogleModal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <svg aria-hidden="true" class="w-8 h-8 m-5" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 <span class="sr-only">Close modal</span>
             </button>
-        </div> <!--fin div bouton "x" fermeture modale-->
+        </div> 
+        <!--fin div bouton "x" fermeture modale-->
 
-        <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
-           
-        <img @click="fermer()"  alt="logo" id="logo"  src="../assets/img/logo.png" class="mr-3 h-6 sm:h-9">
-            
-            
+        <div class=" flex flex-wrap justify-between items-center  mt-5 ml-6 md:ml-20 md:mr-2">
+            <img @click="fermer()"  alt="logo" id="logo"  src="../assets/img/logo.png" class="mr-3 h-6 md:h-9"> 
         </div>
+        <h3 class="text-2xl p-9 text-center text-[#f4f5f9] md:p-12 md:text-5xl">RESULTAT</h3>
 
-        <h3 class="text-5xl text-center text-[#f4f5f9] py-12">RESULTAT</h3>
+        <div class="grid grid-cols-1 h-5/6 mx-10 mb-10 md:mx-auto md:h-4/6 md:grid-cols-6 md:mt-5">
+            <div class="relative bg-[#f4f5f9] rounded-lg pb-16 p-4 md:col-start-2 md:col-span-4 md:pb-12 md:pb-28">
+                <p class="text-lg text-center text-[#000000] text-bold font-bold md:text-3xl">{{pseudo == '' ? "NAMELESS LOSER" : pseudo.toUpperCase()}}, vous avez obtenu le score de : </p>
 
-        <div class=" grid grid-cols-6 mb-10 h-4/6 mt-5">
-            <div class="relative col-start-2 col-span-4 bg-[#f4f5f9] rounded-lg p-12">
-                <p class="text-3xl text-center text-[#000000] text-bold font-bold">{{pseudo == '' ? "NAMELESS LOSER" : pseudo.toUpperCase()}}, vous avez obtenu le score de : </p>
-
-                <p class="text-center text-6xl text-[##502F4C] mt-12"><span class="italic">{{bonnesRep}}/{{totalRep + 1}}</span></p>
+                <p class="text-center text-4xl mt-6 md:text-6xl md:mt-12"><span class="italic">{{bonnesRep}}/{{totalRep + 1}}</span></p>
 
                 <div v-show="detailsDisplay">
-                  <div >
-                    <p class="mt-12 text-center text-2xl mb-8">Cliquez sur le numéro d'une question pour l'afficher : </p>
-                    <p class="text-xl mb-2 "><span class="text-[#F9F4F5] text-center w-12 my-3 rounded-xl  bg-emerald-400 py-1 px-2">Si la case est verte,</span> vous avez correctement répondu (vous emballez pas, c'est que de la <span class="font-bold">chance</span> !)</p>
-                    <p class="text-xl "><span class="text-[#F9F4F5] text-center w-12 my-3 rounded-xl  bg-rose-400 py-1 px-2">Si la case est rouge,</span> c'est que vous vous êtes <span class="font-bold">lamentablement</span> planté (aucune surprise ...)</p>
-                    <div class="grid grid-cols-10 mt-12">
-                        <div @click="displayCorpsQuest(quest.ordre)" v-for="quest in questRecap2" :key="quest.ordre" :class="quest.status == true ?' text-3xl text-[#F9F4F5] text-center aspect-square w-12 m-3 rounded-xl  bg-emerald-400 align-middle pt-1 cursor-pointer' : 'text-3xl text-[#F9F4F5] text-center aspect-square w-12 m-3 rounded-xl  bg-rose-400 align-middle pt-1 cursor-pointer' ">
+                  <div>
+                    <p class="mt-6 text-lg mb-6 text-center md:mt-12 md:text-2xl md:mb-10">Cliquez sur le numéro d'une question pour l'afficher : </p>
+                    <p class="text-sm mb-2 md:text-xl"><span class="text-[#F9F4F5] text-center w-12 my-3 rounded-xl  bg-emerald-400 py-1 px-2">Si la case est verte,</span> vous avez correctement répondu (vous emballez pas, c'est que de la <span class="font-bold">chance</span> !)</p>
+                    <p class="text-sm mb-2 md:text-xl"><span class="text-[#F9F4F5] text-center w-12 my-3 rounded-xl  bg-rose-400 py-1 px-2">Si la case est rouge,</span> c'est que vous vous êtes <span class="font-bold">lamentablement</span> planté (aucune surprise ...)</p>
+                    <div class="grid grid-cols-5 mt-4 md:mt-12 md:grid-cols-10">
+                        <div @click="displayCorpsQuest(quest.ordre)" v-for="quest in questRecap2" :key="quest.ordre" :class="quest.status == true ?'  text-xl text-[#F9F4F5] text-center aspect-square w-10 m-2 rounded-xl  bg-emerald-400 align-middle pt-1 cursor-pointer md:text-3xl md:w-12 md:m-3' : 'text-xl text-[#F9F4F5] text-center aspect-square w-10 m-2 rounded-xl  bg-rose-400 align-middle pt-1 cursor-pointer md:text-3xl md:w-12 md:m-3' ">
                             {{quest.ordre}}
                         </div>
                     </div>
                   </div>  
                   <div>
-                    <p v-show="questRecapDisplay" class="text-center text-xl mt-8 mb-16 sourceCode">{{questDisplay}}</p>
+                    <p v-show="questRecapDisplay" class="text-center text-md mb-8 mt-8 md:text-xl md:mb-16 sourceCodeB">{{questDisplay}}</p>
                   </div>
                 </div>
                 
-                <button @click="rejouer()" class="px-12 py-4 bg-[#502F4C] rounded-lg absolute mt-44 bottom-6 right-12"> <span class="text-2xl  text-[#F9F4F5]">Rejouer</span> </button>
+                <button @click="rejouer()" class="px-6 py-2 bg-[#502F4C] rounded-lg absolute bottom-8 right-5 md:px-12 md:py-4 bottom-4"> <span class="text-lg italic text-[#F9F4F5] italic md:text-2xl">Rejouer</span> </button>
 
-                <a @click="detailsDisplay=!detailsDisplay" href="#" class="underline absolute mt-52 bottom-10 left-20 text-2xl"> Détails</a>
+                <a @click="detailsDisplay=!detailsDisplay" href="#" class="underline absolute text-lg mt-52 bottom-10 left-5 md:left-20 md:text-2xl"> Détails</a>
 
               
-            </div> <!-- fin div contenant le score-->
+            </div> 
+            <!-- fin div contenant le score-->
             
-         </div> <!-- fin div générant les colones-->
+         </div> 
+         <!-- fin div générant les colones-->
             </div>
         </div>
         <main v-show="!scoreModalOpen" class="bg-[#502F4C] flex-1 mb-20">
             <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
                 <button @click.prevent="toogleModal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <svg aria-hidden="true" class="w-8 h-8 m-5" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Close modal</span>
                 </button>
             </div> <!--fin div bouton "x" fermeture modale-->
 
-            <div class=" flex flex-wrap justify-between items-center ml-20 mr-2">
+            <div class=" flex flex-wrap justify-between items-center mt-5 ml-6 md:ml-20 md:mr-2">
                 
                 <a href="#" class="flex items-center">
-                    <img @click="fermer()" alt="logo" id="logo"  src="../assets/img/logo.png" class=" mr-3 mt-6 h-9 sm:h-12">
+                    <img @click="fermer()" alt="logo" id="logo"  src="../assets/img/logo.png" class=" mr-3 mt-10 h-9 md:h-12">
                 </a>
-                <span v-show="cdwnStart" class="text-[#f4f5f9] text-4xl mt-5 mx-20 font-bold calibri">
+                <span v-show="cdwnStart" class="text-[#f4f5f9] text-4xl mt-5 mx-32 md:mx-20 font-bold calibri">
                     <div id="countdown">
                     <div id="countdown-number">{{countDown}}</div>
                     <svg>
@@ -76,44 +74,45 @@
                 
             </div>
 
-            <h3 v-show="questStart" class="text-5xl text-center text-[#f4f5f9] py-12">QUESTION <span class="ml-10 text-5xl">{{totalRep+1}}</span></h3>
-            <h3 v-show="!questStart" class="text-5xl text-center text-[#f4f5f9] py-12">PRÊT À SOUFFRIR, {{pseudo == '' ? "NAMELESS LOSER" : pseudo.toUpperCase()}} ?</h3>
+            <h3 v-show="questStart" class="text-xl p-9 text-center text-[#f4f5f9] md:p-12 md:text-5xl">QUESTION <span class="ml-10 text-xl md:text-5xl">{{totalRep+1}}</span></h3>
+            <h3 v-show="!questStart" class="text-xl p-9 text-center text-[#f4f5f9] md:p-12 md:text-5xl">PRÊT À SOUFFRIR, {{pseudo == '' ? "NAMELESS LOSER" : pseudo.toUpperCase()}} ?</h3>
 
-            <div class=" grid grid-cols-6 mb-10 h-4/6 mt-5">
-                <div class="relative col-start-2 col-span-4 bg-[#f4f5f9] rounded-lg p-12">
+            <div class="grid grid-cols-1 h-5/6 mx-10 md:mx-auto md:h-4/6 md:grid-cols-6 md:mt-5">
+                <div class="relative mb-10 bg-[#f4f5f9] rounded-lg p-4 md:col-start-2 md:col-span-4 md:p-12">
                     <div v-show="!questStart">
-                        <p class="text-center text-2xl">Choose your IznoChallenge</p>
-                        <div class="mt-20 mx-5 grid grid-cols-2 gap-x-4 gap-y-8 ">
+                        <p class="text-center text-2xl">Choisi ton IznoChallenge</p>
+                        <div class="grid grid-cols-1 gap-y-4 mt-10 md:grid-cols-2 md:gap-x-4 md:gap-y-8 md:my-20 md:mx-5 ">
                             <span :class="selectedCat == 0 ? selected : unselected" @click="selectCat(0)">Izno - Geek</span>
                             <span :class="selectedCat == 1 ? selected : unselected" @click="selectCat(1)">Izno - Snob</span>
                             <span :class="selectedCat == 2 ? selected : unselected" @click="selectCat(2)">Izno - Culturé</span>
                             <span :class="selectedCat == 3 ? selected : unselected" @click="selectCat(3)">Izno - Dév</span>
                             <span :class="selectedCat == 4 ? selected : unselected" @click="selectCat(4)">Aléatoire</span>
+
                         </div>
-                        <button  class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 left-5" @click="triche"> 
-                            <span class="text-2xl italic text-[#F9F4F5] italic">Triche</span> 
+                        <button  class="px-6 py-2 bg-[#502F4C] rounded-lg absolute bottom-8 left-5 md:px-12 md:py-4 md:bottom-6" @click="triche"> 
+                            <span class="text-lg italic text-[#F9F4F5] italic md:text-2xl">Triche</span> 
                         </button>
-                        <button  class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click="questAllGet"> 
-                            <span class="text-2xl italic text-[#F9F4F5] italic">Commencer</span> 
+                        <button  class="px-6 py-2 bg-[#502F4C] rounded-lg absolute bottom-8 right-5 md:px-12 md:py-4 md:bottom-6" @click="questAllGet"> 
+                            <span class="text-lg italic text-[#F9F4F5] italic md:text-2xl">Commencer</span> 
                         </button>
                     </div>
                     <div v-show="questStart">
-                        <p class="text-3xl text-center text-[#502F4C] text-bold font-bold">Catégorie : <span class="ml-10 text-base italic">{{questCatCurrent}}</span> </p>
+                        <p class=" text-lg text-center text-[#502F4C] text-bold font-bold md:text-3xl">Catégorie : <span class="ml-5 text-base italic md:ml-10">{{questCatCurrent}}</span> </p>
 
-                    <p class="text-center mt-12 text-2xl text-[#000000]">Question : <span class="ml-10 text-2xl">{{questCurrent}} </span></p>
+                    <p class="text-center mt-6 text-lg text-[#000000] md:mt-12 md:text-2xl">Question : <span class="ml-5 text-lg md:ml-10 md:text-2xl">{{questCurrent}} </span></p>
 
                     <form >
-                        <div class="mt-20 mx-5 grid grid-cols-2 gap-x-4 gap-y-8 ">
+                        <div class="grid grid-cols-1 gap-y-4 mt-10 md:grid-cols-2 md:gap-x-4 md:gap-y-8 md:my-20 md:mx-5 ">
                         <span :class="selectedRep == 0 ? selected : unselected" @click.prevent="selectAnswer(0)"> {{questReponseCurrent[0]}}</span>
                         <span :class="selectedRep == 1 ? selected : unselected" @click="selectAnswer(1)"> {{questReponseCurrent[1]}}</span>
                         <span :class="selectedRep == 2 ? selected : unselected" @click="selectAnswer(2)"> {{questReponseCurrent[2]}}</span>
                         <span :class="selectedRep == 3 ? selected : unselected" @click="selectAnswer(3)"> {{questReponseCurrent[3]}}</span>
                         </div>
                         <div class="text-center grid grid-cols-5">
-                            <p v-show="statusRep == 'goud'" class=" col-start-2 col-span-3 text-emerald-500 text-2xl mt-14 font-bold" >Bonne réponse, nullos !</p>
-                            <p v-show="statusRep == 'izno'" class=" col-start-2 col-span-3  text-rose-600 text-2xl mt-14 font-bold" >Mauvaise réponse, bougre d'âne !!</p>
-                            <button v-show="(selectedRep != -1)" class="px-12 py-4 bg-[#502F4C] rounded-lg absolute bottom-4 right-5" @click.prevent="questModif()"
-                            > <span class="text-2xl italic text-[#F9F4F5] italic">Valider</span> </button>
+                            <p v-show="statusRep == 'goud'" class=" col-start-2 col-span-3 text-emerald-500 text-lg mt-14 font-bold md:text-2xl" >Bonne réponse, nullos !</p>
+                            <p v-show="statusRep == 'izno'" class=" col-start-2 col-span-3  text-rose-600 text-lg mt-14 font-bold md:text-2xl" >Mauvaise réponse, bougre d'âne !!</p>
+                            <button v-show="(selectedRep != -1)" class="px-6 py-2 bg-[#502F4C] rounded-lg absolute bottom-8 right-5 md:px-12 md:py-4 bottom-4" @click.prevent="questModif()"
+                            > <span class="text-lg italic text-[#F9F4F5] italic md:text-2xl">Valider</span> </button>
                         </div>
                     </form>
                     </div><!-- fin div contenant v-show-->
@@ -159,8 +158,8 @@ export default {
             questDisplay : "",
             questRecapDisplay : false,
 
-            unselected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer",
-            selected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer quest",
+            unselected: "p-4 text-md italic bg-[#C8B8DB] rounded-lg cursor-pointer md:text-xl md:ml-10",
+            selected: "p-4 text-md italic bg-[#C8B8DB] rounded-lg cursor-pointer quest md:text-xl md:ml-10",
 
         };
     },
@@ -365,4 +364,5 @@ svg circle {
     stroke-dashoffset: 226px;
   }
 }
+
 </style>
