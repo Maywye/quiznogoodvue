@@ -10,11 +10,19 @@
                         <button @click="toggleModalH" class="block py-1 pl-2 text-[#F9F4F5] bg-[#502F4C] rounded-lg md:pr-4 pr-2 md:py-2 md:pl-3 md:text-lg "><i class="fa-solid fa-play"></i>&emsp;Jouer</button>
                       </li>
                       <li>
-                        <button class="block text-[#502F4C] bg-[#C8B8DB] rounded-lg py-1 px-2 md:py-2 md:pr-4 md:pl-3 md-1 md:text-lg "><router-link to="/connexion">Se connecter </router-link></button>
+                        <button v-if="!getCurrentUser"  class="block text-[#502F4C] bg-[#C8B8DB] rounded-lg py-1 px-2 md:py-2 md:pr-4 md:pl-3 md-1 md:text-lg "><router-link to="/connexion">Se connecter </router-link></button>
+                        <button v-else @click="logoutStore" class="block text-[#502F4C] bg-[#C8B8DB] rounded-lg py-1 px-2 md:py-2 md:pr-4 md:pl-3 md-1 md:text-lg ">Se déconnecter </button>
+                      </li>
+                      <li v-if="getCurrentUser">
+                        <router-link to="profile">
+                        <div class="rounded-full border-2 border-[#502F4C] w-12 h-12">
+                           <img v-if="getCurrentUser.avatar" :src="getCurrentUser.avatar" alt="avatar"> 
+                        </div>
+                      </router-link>
                       </li>
                     </ul>
                   </div> <!-- fin div première partie de navbar-->
-                  <div>{{ shareLog }}</div>
+                  <div>{{getCurrentUser}}</div>
             <div v-show="modalOpenH" class="flex flex-row justify-center pt-5 lg:justify-end lg:ml-20 lg:mr-2">
                     <ul class="flex flex-row rounded-lg space-x-2 lg:space-x-4 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 lg:p-4 lg:mt-1 ">
                         <li>
@@ -31,13 +39,15 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters} from 'vuex'
+import { mapMutations, mapGetters, mapActions} from 'vuex'
 export default {
     name: "TheHeader.vue",
     data(){
       return{
         isDisabled: true,
         modalOpenH: false,
+
+        avatarSrc : "assets/img/dil.png"
       }
     },
     methods:{
@@ -49,10 +59,11 @@ export default {
       // toogleModalFS() {
       //   this.$store.commit('TOGGLE_MODAL')
       // }
+      ...mapActions(["logoutStore"])
     },
     
     computed:{
-      ...mapGetters(["shareLog"])
+      ...mapGetters(["getCurrentUser"])
     }
     
 }

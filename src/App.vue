@@ -13,13 +13,23 @@
 <script>
 import TheHeader from './components/HeaderVue.vue';
 import TheFooter from './components/FooterVue.vue';
+import { mapActions } from 'vuex';
+
 export default {
   name: 'App',
   components: {
     TheHeader,
     TheFooter,
+  },
+  methods : {
+    ...mapActions(["storeCurrent"])
+ 
+  },
+  mounted(){
+    if(localStorage.getItem('userId') != null)
+    this.storeCurrent()
+    }
   }
-}
 </script>
 
 <style>
