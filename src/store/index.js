@@ -34,6 +34,7 @@ const store = new VueX.Store({
     mutations: {
         TOGGLE_MODAL(state){
             state.modalOpen = !state.modalOpen
+            router.push("/")
         },
         // LOGIN (state){
         //     state.loggedIn = true
