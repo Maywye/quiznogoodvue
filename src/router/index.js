@@ -19,6 +19,14 @@ const routes = [
     {path: '*', name: 'NotFound', component: NotFound}
 ]
 
+// router.beforeEach((to, from, next) => {
+//     if(to.name == 'LoginSignin' && localStorage.getItem('userId') != null){
+//         next({name:"profile"})
+//     }else{
+//         next()
+//     }
+// })
+
 const router = new VueRouter({
     mode: 'history',
     routes

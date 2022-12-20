@@ -31,6 +31,7 @@
 </template>
 <script>
 import emailjs from 'emailjs-com'
+import { mapGetters } from 'vuex'
 export default {
     name: 'ContactForm',
     data() {
@@ -64,7 +65,16 @@ export default {
       }
 
     },
-  }
+  },
+  computed : {
+        ...mapGetters(["getCurrentUser"])
+    },
+    mounted() {
+        if (this.getCurrentUser) {
+            this.name = this.getCurrentUser.pseudo
+            this.email = this.getCurrentUser.email
+        }
+    }
 }
 
 </script>

@@ -13,7 +13,8 @@ const state = {
     user: {},
     currentUser : null,
     token: null,
-    avatar: ""
+    avatar: "",
+    np:''
 }
 
 // Create a new store instance.
@@ -36,9 +37,6 @@ const store = new VueX.Store({
             state.modalOpen = !state.modalOpen
             router.push("/")
         },
-        // LOGIN (state){
-        //     state.loggedIn = true
-        // },
         SET_CURRENT_USER(state, res){
             state.currentUser = res
         },
@@ -54,6 +52,9 @@ const store = new VueX.Store({
         SET_AVATAR(state, avatarSrc) {
             state.currentUser.avatar = avatarSrc
             console.log(state.currentUser)
+        },
+        CHANGE_NP(state, np){
+            state.np = np
         }
       },
 
@@ -92,13 +93,25 @@ const store = new VueX.Store({
           },
           async setAvatar ({commit}, avatarSrc) {
             commit("SET_AVATAR", avatarSrc)
-            await axios.put(process.env.VUE_APP_API_URL + "users/" + localStorage.getItem('userId'), state.currentUser)
-            .then((res) => {
-                console.log(res)
-            }).catch((e) => {
+            await axios.patch(process.env.VUE_APP_API_URL + "users/" + localStorage.getItem('userId'),{"avatar": state.currentUser.avatar})
+            .catch((e) => {
                 console.error(e)
             }) //-- fin du catch
-        } // fin de la fonction
+        }, // fin de la fonction
+        async changePassword({commit}, newPassword){
+            commit("CHANGE_NP", newPassword)
+            await axios.patch(process.env.VUE_APP_API_URL + "users/" + localStorage.getItem('userId'),{"password": state.np})
+            .catch((e) => {
+                console.error(e)
+            })
+        },
+        async deleteUser(){
+            await axios.delete(process.env.VUE_APP_API_URL + "users/" + localStorage.getItem('userId'))
+            .then(() => localStorage.removeItem("userId"))
+            .catch((e) => {
+                console.error(e)
+            })
+        }
     } //-- fin des actions
 }) //-- fin du store
  

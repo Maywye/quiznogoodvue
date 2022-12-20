@@ -4,24 +4,15 @@
       "pseudo": "ahok",
       "email": "ah@ok.fr",
       "password": "$2a$10$6PgK.8ZIYmdVGVqahUxae.JgsMdppStq5MAcgIZnQgEGC6JSHIcV6",
-      "id": 1
+      "id": 1,
+      "avatar": "../assets/img/iznogoud.png"
     },
     {
+      "pseudo": "nonpitié",
       "email": "non@xn--piti-epa.fr",
       "password": "$2a$10$rcAyqlEaeL0phclhapVUd.CVZUB4EuM1u/UkZdPV/eIqlVBvNXWdO",
-      "id": 2
-    },
-    {
-      "email": "aaaaaooooaaa@user.user",
-      "password": "$2a$10$Zimplk9OmTKHfT/WWgnLuONNFtLlrM405Lgj8NzTadFyY4.nUgOTS",
-      "id": 3
-    },
-    {
-      "email": "adp@gmail.com",
-      "password": "$2a$10$4cPVoXnLSMOi1zjq319Ike.383bwLj7080gOgYsrSed/8qiL4/o5a",
-      "pseudo": "adp",
-      "id": 4,
-      "avatar": "../assets/img/dil.png"
+      "id": 2,
+      "avatar": "../assets/img/petit-nerveux-ambitieux.png"
     }
   ],
   "questions": [
