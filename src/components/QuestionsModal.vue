@@ -11,7 +11,7 @@
         <!--fin div bouton "x" fermeture modale-->
 
         <div class=" flex flex-wrap justify-between items-center  mt-5 ml-6 md:ml-20 md:mr-2">
-            <img @click="fermer()"  alt="logo" id="logo"  src="../assets/img/logo.png" class="mr-3 h-6 md:h-9"> 
+            <img @click="fermer()"  alt="logo" id="logo"  src="../../public/assets/img/logo.png" class="mr-3 h-6 md:h-9"> 
         </div>
         <h3 class="text-2xl p-9 text-center text-[#f4f5f9] md:p-12 md:text-5xl">RESULTAT</h3>
 
@@ -60,7 +60,7 @@
             <div class=" flex flex-wrap justify-between items-center mt-5 ml-6 md:ml-20 md:mr-2">
                 
                 <a href="#" class="flex items-center">
-                    <img @click="fermer()" alt="logo" id="logo"  src="../assets/img/logo.png" class=" mr-3 mt-10 h-9 md:h-12">
+                    <img @click="fermer()" alt="logo" id="logo"  src="../../public/assets/img/logo.png" class=" mr-3 mt-10 h-9 md:h-12">
                 </a>
                 <span v-show="cdwnStart" class="text-[#f4f5f9] text-4xl mt-5 mx-32 md:mx-20 font-bold calibri">
                     <div id="countdown">

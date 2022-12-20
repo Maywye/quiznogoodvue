@@ -3,7 +3,7 @@
         <nav class="bg-[#F9F4F5] border-gray-200 py-8 lg:py-2.5 lg:m-0">
             <div class="justify-between items-center lg:flex lg:ml-20 lg:mr-2">
               <router-link to="/"> 
-                <img alt="logo" id="logo"  src="../assets/img/logo.png" class="h-6 h-9 m-auto lg:mr-3">
+                <img alt="logo" id="logo"  src="../../public/assets/img/logo.png" class="h-6 h-9 m-auto lg:mr-3">
               </router-link>
                     <ul class="flex flex-row rounded-lg justify-center space-x-8 mt-6 md:p-4 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 ">
                       <li>

@@ -5,7 +5,7 @@
                 <h2 class="text-7xl mx-10 py-8">N<span class="text-[#C8B8DB]">O</span>T F<span class="text-[#C8B8DB]">O</span>UND</h2>
             </div>
             <div class="col-start-7 col-span-9 md:mb-32">
-                <img class="content-center" src="../assets/img/NotFound.png" alt="Oups Face"/>
+                <img class="content-center" src="../../public/assets/img/NotFound.png" alt="Oups Face"/>
             </div>
             <div class="col-start-2 col-span-10">
                 <p class="text-xl font-medium">Puisqu'on est <span class="font-black">sympa</span> on te propose un</p>

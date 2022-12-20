@@ -6,7 +6,7 @@
             <p class="text-sm italic font-medium text-center md:text-xl">Est-ce <span class="font-black">vraiment</span> nécessaire ?</p>
         </div>
         <div class="flex justify-center">
-            <img class="content-center" src="../assets/img/iznogoud.png" alt="iznogoud face"> 
+            <img class="content-center" src="../../public/assets/img/iznogoud.png" alt="iznogoud face"> 
         </div>
         
         <div class="flex flex-col items-center justify-center">
