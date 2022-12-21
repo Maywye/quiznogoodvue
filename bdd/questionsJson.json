@@ -5,7 +5,7 @@
       "email": "ah@ok.fr",
       "password": "$2a$10$6PgK.8ZIYmdVGVqahUxae.JgsMdppStq5MAcgIZnQgEGC6JSHIcV6",
       "id": 1,
-      "avatar": "../assets/img/iznogoud.png"
+      "avatar": "../assets/img/dil.png"
     },
     {
       "pseudo": "nonpitié",
@@ -527,7 +527,7 @@
       "id": 40,
       "cat": "Izno - Snob",
       "number": 10,
-      "question": "A quelle catégorie de variation sociolinguistique la variété des accets régionaux correspond-elle ? ",
+      "question": "A quelle catégorie de variation sociolinguistique la variété des accents régionaux correspond-elle ? ",
       "answers": [
         "Variation diastratique",
         "Variation diatopique",
