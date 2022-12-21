@@ -11,7 +11,7 @@
                 </form>
             </span>
             <span class="grid grid-cols-1 pt-14">
-                <a href="#" class="md:text-2xl ">Statistiques</a>
+                <a href="#" class="md:text-2xl cursor-not-allowed opacity-25" title="en construction">Statistiques</a>
                 <a @click="delPswrd" href="#" class="md:text-2xl">Supprimer le compte =(</a>
             </span>
     </div>

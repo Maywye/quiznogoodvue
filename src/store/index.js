@@ -10,7 +10,7 @@ Vue.use(VueX)
 
 const state = {
     modalOpen: false,
-    user: {},
+    users: [],
     currentUser : null,
     token: null,
     avatar: "",
@@ -28,8 +28,8 @@ const store = new VueX.Store({
         getCurrentUser(state){
             return state.currentUser
         },
-        getUser(state){
-            return state.user
+        getUsers(state){
+            return state.users
         }
     },
     mutations: {
@@ -55,6 +55,12 @@ const store = new VueX.Store({
         },
         CHANGE_NP(state, np){
             state.np = np
+        },
+        RESET_USERS(state){
+            state.users = []
+        },
+        GET_USERS(state, x){
+            state.users.push(x)
         }
       },
 
@@ -105,12 +111,23 @@ const store = new VueX.Store({
                 console.error(e)
             })
         },
-        async deleteUser(){
+        async deleteUser({dispatch}){
             await axios.delete(process.env.VUE_APP_API_URL + "users/" + localStorage.getItem('userId'))
-            .then(() => localStorage.removeItem("userId"))
+            .then(() => dispatch("logoutStore"))
             .catch((e) => {
                 console.error(e)
             })
+        },
+        async getFourUsers({commit}){
+            commit("RESET_USERS")
+            await axios.get(process.env.VUE_APP_API_URL + "users/" )
+            .then((res) => {
+                for (let index = 0; index < 4; index++) {
+                    commit("GET_USERS", res.data[index])
+                }
+                
+            })
+            .catch(e => console.log(e))
         }
     } //-- fin des actions
 }) //-- fin du store

@@ -22,7 +22,7 @@
                       </li>
                     </ul>
                   </div> <!-- fin div première partie de navbar-->
-                  <div>{{getCurrentUser}}</div>
+                  <div v-show="false">{{getCurrentUser}}</div>
             <div v-show="modalOpenH" class="flex flex-row justify-center pt-5 lg:justify-end lg:ml-20 lg:mr-2">
                     <ul class="flex flex-row rounded-lg space-x-2 lg:space-x-4 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 lg:p-4 lg:mt-1 ">
                         <li>

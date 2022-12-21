@@ -83,11 +83,11 @@
                     <div v-show="!questStart">
                         <p class="text-center text-2xl">Choisi ton IznoChallenge</p>
                         <div class="grid grid-cols-1 gap-y-4 mt-10 md:grid-cols-2 md:gap-x-4 md:gap-y-8 md:my-20 md:mx-5 ">
-                            <span :class="selectedCat == 0 ? selected : unselected" @click="selectCat(0)">Izno - Geek</span>
-                            <span :class="selectedCat == 1 ? selected : unselected" @click="selectCat(1)">Izno - Snob</span>
-                            <span :class="selectedCat == 2 ? selected : unselected" @click="selectCat(2)">Izno - Culturé</span>
-                            <span :class="selectedCat == 3 ? selected : unselected" @click="selectCat(3)">Izno - Dév</span>
-                            <span :class="selectedCat == 4 ? selected : unselected" @click="selectCat(4)">Aléatoire</span>
+                            <span :class="selectedCat == 0 ? selectedCateg : unselectedCateg" @click="selectCat(0)">Izno - Geek</span>
+                            <span :class="selectedCat == 1 ? selectedCateg : unselectedCateg" @click="selectCat(1)">Izno - Snob</span>
+                            <span :class="selectedCat == 2 ? selectedCateg : unselectedCateg" @click="selectCat(2)">Izno - Culturé</span>
+                            <span :class="selectedCat == 3 ? selectedCateg : unselectedCateg" @click="selectCat(3)">Izno - Dév</span>
+                            <span :class="selectedCat == 4 ? selectedCateg : unselectedCateg" @click="selectCat(4)">Aléatoire</span>
 
                         </div>
                         <button  class="px-6 py-2 bg-[#502F4C] rounded-lg absolute bottom-8 left-5 md:px-12 md:py-4 md:bottom-6" @click="triche"> 
@@ -159,8 +159,10 @@ export default {
             questDisplay : "",
             questRecapDisplay : false,
 
-            unselected: "p-4 text-md italic bg-[#C8B8DB] rounded-lg cursor-pointer md:text-xl md:ml-10",
-            selected: "p-4 text-md italic bg-[#C8B8DB] rounded-lg cursor-pointer quest md:text-xl md:ml-10",
+            unselected: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCode rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10",
+            selected: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCode rounded-lg cursor-pointer quest md:text-xl md:ml-10 lg:text-2xl",
+            unselectedCateg: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10",
+            selectedCateg: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer quest md:text-xl md:ml-10 lg:text-2xl",
 
         };
     },
@@ -282,20 +284,20 @@ export default {
             }
         },
         rejouer(){
-            this.scoreModalOpen = ! this.scoreModalOpen
-            this.questStart = !this.questStart
+            this.scoreModalOpen = false
+            this.questStart = false
             this.cdwnStart = false
+            this.detailsDisplay = false
             this.totalRep = 0
             this.bonnesRep = 0
             this.selectedCat = -1
-            this.countDown = 20
+            clearTimeout(this.timer)
             this.questRecap = []
         },
         fermer(){
             this.rejouer()
             this.scoreModalOpen = false
             this.questStart = false
-            this.cdwnStart = false
             this.toogleModalFS()
         },
         displayCorpsQuest(x){
