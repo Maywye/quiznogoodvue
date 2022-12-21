@@ -1,44 +1,44 @@
 {
   "users": [
     {
+      "email": "uimaster@test.com",
+      "password": "$2a$10$UFgocFnpGl8OG5nVFa.paOQZYqvlCGpSj5n2ImCJsI.mUWUPcdFdq",
+      "pseudo": "UiMaster",
+      "avatar": "../assets/img/pfp.png",
+      "id": 1
+    },
+    {
       "pseudo": "Énormocervo",
       "email": "ah@ok.fr",
       "password": "$2a$10$6PgK.8ZIYmdVGVqahUxae.JgsMdppStq5MAcgIZnQgEGC6JSHIcV6",
-      "id": 1,
-      "avatar": "../assets/img/avatar4.png"
-    },
-    {
-      "pseudo": "nonpitié",
-      "email": "non@xn--piti-epa.fr",
-      "password": "$2a$10$rcAyqlEaeL0phclhapVUd.CVZUB4EuM1u/UkZdPV/eIqlVBvNXWdO",
       "id": 2,
-      "avatar": "../assets/img/pfp.png"
-    },
-    {
-      "email": "bou@bou.fr",
-      "password": "$2a$10$IZQMmPJx8aGUQH9jZ.odruX0cR2R0AcIxv1rTz88hL7/GBwbq83Xe",
-      "pseudo": "Babinks_Rider",
-      "id": 3,
-      "avatar": "../assets/img/avatar9.png"
+      "avatar": "../assets/img/avatar4.png"
     },
     {
       "email": "sm@bd.fr",
       "password": "$2a$10$2t0skJTm7gY5xanLND2MVuj72QFN9Q71OFPDvG5V947wdGlxvLPhe",
       "pseudo": "StoreMaster",
       "avatar": "../assets/img/avatar5.png",
-      "id": 4
+      "id": 3
+    },
+    {
+      "email": "bou@bou.fr",
+      "password": "$2a$10$IZQMmPJx8aGUQH9jZ.odruX0cR2R0AcIxv1rTz88hL7/GBwbq83Xe",
+      "pseudo": "Babinks_Rider",
+      "id": 4,
+      "avatar": "../assets/img/avatar9.png"
+    },
+    {
+      "pseudo": "nonpitié",
+      "email": "non@xn--piti-epa.fr",
+      "password": "$2a$10$rcAyqlEaeL0phclhapVUd.CVZUB4EuM1u/UkZdPV/eIqlVBvNXWdO",
+      "id": 5,
+      "avatar": "../assets/img/pfp.png"
     },
     {
       "email": "uwu@uwu.uwu",
       "password": "$2a$10$0t.X7b/lT55sP4h5yl3ys.SpZ1hoWASQ8KE/Mor8nrUSgjV5dHkqq",
       "pseudo": "UwU",
-      "avatar": "../assets/img/pfp.png",
-      "id": 5
-    },
-    {
-      "email": "uimaster@test.com",
-      "password": "$2a$10$UFgocFnpGl8OG5nVFa.paOQZYqvlCGpSj5n2ImCJsI.mUWUPcdFdq",
-      "pseudo": "UiMaster",
       "avatar": "../assets/img/pfp.png",
       "id": 6
     }

@@ -288,6 +288,7 @@ export default {
             this.questStart = false
             this.cdwnStart = false
             this.detailsDisplay = false
+            this.questRecapDisplay = false
             this.totalRep = 0
             this.bonnesRep = 0
             this.selectedCat = -1
