@@ -12,7 +12,7 @@
                 <input v-model="passwordConf" type="password" name="cmdp" id="cmdp" class="rounded-lg px-2 py-3 bg-[#C8B8DB] outline-[#502F4C] w-full mb-5">
                 <br>
                 <!-- <button type="submit" class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg">S'inscrire</button> -->
-                <button type="submit" class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg"><router-link to="/profile">S'inscrire</router-link></button>
+                <button type="submit" class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg">S'inscrire</button>
             </form>
     </div>
 </template>

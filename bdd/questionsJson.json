@@ -34,6 +34,13 @@
       "pseudo": "UwU",
       "avatar": "../assets/img/pfp.png",
       "id": 5
+    },
+    {
+      "email": "uimaster@test.com",
+      "password": "$2a$10$UFgocFnpGl8OG5nVFa.paOQZYqvlCGpSj5n2ImCJsI.mUWUPcdFdq",
+      "pseudo": "UiMaster",
+      "avatar": "../assets/img/pfp.png",
+      "id": 6
     }
   ],
   "questions": [
