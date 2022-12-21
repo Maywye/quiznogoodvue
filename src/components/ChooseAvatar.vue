@@ -1,19 +1,31 @@
 <template>
-    <div class="col-start-2 col-span-10 bg-[#F9F4F5] m-6 md:p-2 lg:p-10 pt-2 pb-0 rounded-lg md:col-span-5 lg:m-12">
+    <div class= "col-start-2 col-span-10 bg-[#F9F4F5] p-4 rounded-lg m-6 lg:p-5 lg:col-span-6 lg:m-12">
             <p class="text-center text-[#000000] font-bold mb-2 md:text-2xl">Choisis un avatar : </p>
-            <span class="grid grid-cols-2 my-4 lg:grid-cols-4 lg:mt-8">
+            <span class="grid grid-cols-2 my-4 justify-items-center md:gap-x-4 md:gap-y-8 md:grid-cols-3 lg:grid-cols-4 lg:mt-8">
 
                 <span :class="selectedAvatar == 0 ? selected : unselected" @click="selectAvatar(0)">
-                    <img src="../assets/img/dil.png" alt="avatar-1" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/dil.png" alt="avatar-1" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 1 ? selected : unselected" @click="selectAvatar(1)">
-                    <img src="../assets/img/HarounElPoussah.png" alt="avatar-2" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/HarounElPoussah.png" alt="avatar-2" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 2 ? selected : unselected" @click="selectAvatar(2)">
-                    <img src="../assets/img/petit-nerveux-ambitieux.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/petit-nerveux-ambitieux.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 3 ? selected : unselected" @click="selectAvatar(3)">
-                    <img src="../assets/img/iznogoud.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/iznogoud.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                </span>
+                <span :class="selectedAvatar == 4 ? selected : unselected" @click="selectAvatar(4)">
+                    <img src="../../public/assets/img/dil.png" alt="avatar-1" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                </span>
+                <span :class="selectedAvatar == 5 ? selected : unselected" @click="selectAvatar(5)">
+                    <img src="../../public/assets/img/HarounElPoussah.png" alt="avatar-2" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                </span>
+                <span :class="selectedAvatar == 6 ? selected : unselected" @click="selectAvatar(6)">
+                    <img src="../../public/assets/img/petit-nerveux-ambitieux.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                </span>
+                <span :class="selectedAvatar == 7 ? selected : unselected" @click="selectAvatar(7)">
+                    <img src="../../public/assets/img/iznogoud.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 
             </span>
