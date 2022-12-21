@@ -1,6 +1,6 @@
 <template>
     <div class= "col-start-2 col-span-10 bg-[#F9F4F5] p-4 rounded-lg m-6 lg:p-5 lg:col-span-6 lg:m-12">
-            <p class="text-center text-[#000000] font-bold mb-2 md:text-2xl">Choisis un avatar : </p>
+            <p class="text-center text-[#000000] font-bold mb-2 md:text-2xl">Choisis <span @click="selectAvatar(8)"> un</span> avatar : </p>
             <span class="grid grid-cols-2 my-4 justify-items-center md:gap-x-4 md:gap-y-8 md:grid-cols-3 lg:grid-cols-4 lg:mt-8">
 
                 <span :class="selectedAvatar == 0 ? selected : unselected" @click="selectAvatar(0)">
@@ -71,6 +71,8 @@ export default {
                 case 6: this.avatarSrc = "../assets/img/avatar9.png"
                     break;
                 case 7: this.avatarSrc = "../assets/img/avatar12.png"
+                    break;
+                case 8: this.avatarSrc = "../assets/img/pfp.png"
                     break;
             }
             this.setAvatar(this.avatarSrc)
