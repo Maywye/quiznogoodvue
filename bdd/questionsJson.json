@@ -5,7 +5,7 @@
       "email": "ah@ok.fr",
       "password": "$2a$10$6PgK.8ZIYmdVGVqahUxae.JgsMdppStq5MAcgIZnQgEGC6JSHIcV6",
       "id": 1,
-      "avatar": "../assets/img/dil.png"
+      "avatar": "../assets/img/avatar9.png"
     },
     {
       "pseudo": "nonpitié",
@@ -13,6 +13,27 @@
       "password": "$2a$10$rcAyqlEaeL0phclhapVUd.CVZUB4EuM1u/UkZdPV/eIqlVBvNXWdO",
       "id": 2,
       "avatar": "../assets/img/petit-nerveux-ambitieux.png"
+    },
+    {
+      "email": "bou@bou.fr",
+      "password": "$2a$10$IZQMmPJx8aGUQH9jZ.odruX0cR2R0AcIxv1rTz88hL7/GBwbq83Xe",
+      "pseudo": "boubou",
+      "id": 3,
+      "avatar": "../assets/img/HarounElPoussah.png"
+    },
+    {
+      "email": "sm@bd.fr",
+      "password": "$2a$10$2t0skJTm7gY5xanLND2MVuj72QFN9Q71OFPDvG5V947wdGlxvLPhe",
+      "pseudo": "StoreMaster",
+      "avatar": "../assets/img/dil.png",
+      "id": 4
+    },
+    {
+      "email": "123@456.fr",
+      "password": "$2a$10$MZhCeDXdYCxL4DMHPwiLDOrCaG7pxHxqvqtQTHw.6vJ8/ZhLy7Tgu",
+      "pseudo": "UwU",
+      "avatar": "../assets/img/pfp.png",
+      "id": 5
     }
   ],
   "questions": [

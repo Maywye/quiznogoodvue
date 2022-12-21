@@ -41,7 +41,7 @@ export default {
                     alert("votre mot de passe est différent de votre mot de passe de confirmation ")
                 }else{
                     try{
-                        await axios.post(this.urlApiReg, {"pseudo": this.pseudo,"email": this.email, "password": this.password})
+                        await axios.post(this.urlApiReg, {"pseudo": this.pseudo,"email": this.email, "password": this.password, "avatar": "../assets/img/pfp.png"})
                         alert("Votre compte a bien été créé : veuillez vous identifier dans le champ de gauche ;)")
                         this.pseudo=''
                         this.email=''

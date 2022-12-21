@@ -4,28 +4,28 @@
             <span class="grid grid-cols-2 my-4 justify-items-center md:gap-x-4 md:gap-y-8 md:grid-cols-3 lg:grid-cols-4 lg:mt-8">
 
                 <span :class="selectedAvatar == 0 ? selected : unselected" @click="selectAvatar(0)">
-                    <img src="../../public/assets/img/dil.png" alt="avatar-1" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/avatar1.png" alt="avatar-1" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 1 ? selected : unselected" @click="selectAvatar(1)">
-                    <img src="../../public/assets/img/HarounElPoussah.png" alt="avatar-2" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/avatar3.png" alt="avatar-2" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 2 ? selected : unselected" @click="selectAvatar(2)">
-                    <img src="../../public/assets/img/petit-nerveux-ambitieux.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/avatar4.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 3 ? selected : unselected" @click="selectAvatar(3)">
-                    <img src="../../public/assets/img/iznogoud.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/avatar5.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 4 ? selected : unselected" @click="selectAvatar(4)">
-                    <img src="../../public/assets/img/dil.png" alt="avatar-1" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/avatar6.png" alt="avatar-1" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 5 ? selected : unselected" @click="selectAvatar(5)">
-                    <img src="../../public/assets/img/HarounElPoussah.png" alt="avatar-2" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/avatar7.png" alt="avatar-2" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 6 ? selected : unselected" @click="selectAvatar(6)">
-                    <img src="../../public/assets/img/petit-nerveux-ambitieux.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/avatar9.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 <span :class="selectedAvatar == 7 ? selected : unselected" @click="selectAvatar(7)">
-                    <img src="../../public/assets/img/iznogoud.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
+                    <img src="../../public/assets/img/avatar12.png" alt="avatar-3" class="rounded-full bg-[#C8B8DB] w-16 h-16 m-2 cursor-pointer md:w-24 md:h-24">
                 </span>
                 
             </span>
@@ -41,8 +41,8 @@ export default {
             selectedAvatar : -1,
             avatarSrc : "",
 
-            unselected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] cursor-pointer rounded-full w-32 h-32",
-            selected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] rounded-lg cursor-pointer rounded-full w-32 h-32",
+            unselected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] cursor-pointer rounded-full w-32 h-32 border-2 border-[#502F4C]",
+            selected: "ml-10 p-4 text-xl italic bg-[#C8B8DB] cursor-pointer rounded-full w-32 h-32 border-4 border-[#502F4C]",
 
         }
     },
@@ -56,16 +56,23 @@ export default {
 
         stockAvatarSource () {
             switch (this.selectedAvatar) {
-                case 0: this.avatarSrc = "../assets/img/dil.png"
+                case 0: this.avatarSrc = "../assets/img/avatar1.png"
                     break;
-                case 1: this.avatarSrc = "../assets/img/HarounElPoussah.png"
+                case 1: this.avatarSrc = "../assets/img/avatar3.png"
                     break;
-                case 2: this.avatarSrc = "../assets/img/petit-nerveux-ambitieux.png"
+                case 2: this.avatarSrc = "../assets/img/avatar4.png"
                     break;
-                case 3: this.avatarSrc = "../assets/img/iznogoud.png"
+                case 3: this.avatarSrc = "../assets/img/avatar5.png"
+                    break;
+                case 4: this.avatarSrc = "../assets/img/avatar6.png"
+                    break;
+                case 5: this.avatarSrc = "../assets/img/avatar7.png"
+                    break;
+                case 6: this.avatarSrc = "../assets/img/avatar9.png"
+                    break;
+                case 7: this.avatarSrc = "../assets/img/avatar12.png"
                     break;
             }
-            console.log(this.avatarSrc)
             this.setAvatar(this.avatarSrc)
         }
     }
