@@ -28,7 +28,7 @@ export default {
             password: '',
             passwordConf:'',
 
-            urlApiReg: 'http://localhost:3000/register'
+            urlApiReg: 'https://json-server-by-vercel.vercel.app/register'
         }
     },
     methods: {

@@ -48,6 +48,13 @@
       "pseudo": "QuizNoTeam",
       "avatar": "../assets/img/avatar3.png",
       "id": 7
+    },
+    {
+      "email": "123@o.fr",
+      "password": "$2a$10$y3Wd9YXZKwyLU86R/4vhDeQ5qsk8YQFlJPrDDhRHJw0kU8lNdGqUO",
+      "pseudo": "nouvo",
+      "avatar": "../assets/img/pfp.png",
+      "id": 8
     }
   ],
   "questions": [
