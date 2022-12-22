@@ -138,7 +138,7 @@ export default {
     props: ["pseudo"],
     data() {
         return {
-            urlApiQuest: "http://localhost:3000/questions",
+            urlApiQuest: "https://json-server-by-vercel.vercel.app/questions",
 
             questStart: false,
             cdwnStart: false,
