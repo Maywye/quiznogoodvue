@@ -18,7 +18,6 @@
 </template>
 <script>
 import axios from 'axios';
-
 export default {
     name: 'SignIn',
     data(){
@@ -27,13 +26,11 @@ export default {
             email: '',
             password: '',
             passwordConf:'',
-
             urlApiReg: 'https://json-server-by-vercel.vercel.app/register'
         }
     },
     methods: {
         async signIn(){
-
             if (this.pseudo.length < 2 || this.pseudo.length >20 ) {
                 alert("Votre pseudo doit être compris entre 2 et 20 caractères");
             }else{
@@ -47,14 +44,11 @@ export default {
                         this.email=''
                         this.password=''
                         this.passwordConf=''
-
                     }catch(e){
                         console.error(e)
                     }
-
                 }
             }
-
            
           
         }

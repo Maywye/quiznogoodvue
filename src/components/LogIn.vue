@@ -8,7 +8,6 @@
                 <label for="mdp" class="ml-4 text-lg text-[#502F4C] font-medium pt-7">Mot de passe</label>
                 <input v-model="password" type="password" name="mdp" id="mdp" class="rounded-lg px-2 py-3 bg-[#C8B8DB] outline-[#502F4C] w-full mb-5">
                 <button type="submit" class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg mt-12">Se connecter</button>
-                <!-- <button type="submit" class="block py-2 pr-4 pl-3 text-lg text-[#F9F4F5] bg-[#502F4C] rounded-lg mt-12"><router-link to="/">Se connecter </router-link></button> -->
             </form>
     </div>
 </template>
