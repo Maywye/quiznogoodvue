@@ -6,15 +6,15 @@
                     <figure class="md:my-8 md:col-start-2">
                         <img class="block mx-auto" src="../../public/assets/img/quote.svg" alt="">
                         <blockquote>
-                            <p class="text-center bg-[#C8B8DB] p-5 my-10 rounded-3xl md:my-4 md:text-2xl ">Ce n'est pas votre QI* qui importe, mais votre QE*. Nous faisons réfléchir et rire les gens. Enfin du moins, on essaie. </p>
+                            <p class="text-center bg-[#C8B8DB] p-5 my-10 rounded-3xl md:my-4 md:text-2xl ">Vous avez des connaissances ? C'est bien ; vous avez un sens aigu de l'(auto)dérision ? C'est mieux ! Choisissez votre challenge et lancez-vous : si, au hasard d'un rictus désabusé, vous mémorisez quelque chose, nous considèrerons notre défi comme relevé ;)</p>
                         </blockquote>
-                        <figcaption class="justify-center items-center space-x-3 text-center"> <cite class="pr-4 font-medium">IznoTeam</cite>|<cite class="pl-1 text-sm">Et l'aide de nos IA preférées</cite></figcaption>
+                        <figcaption class="justify-center items-center space-x-3 text-center"> <cite class="pr-4 font-medium">QuizNoTeam</cite>|<cite class="pl-1 text-sm">Et l'aide de nos IA preférées</cite></figcaption>
                     </figure>
                 </div>
 
-                <h3 class="text-center m-10 text-lg md:text-2xl">Quiznogood est un site Web de quiz humoristique et interactif pour s'amuser. Nos quiz sont variés, divertissants et parfaits pour tester vos compétences. Alors qu'est-ce que tu attends? Lances-toi sur nos Izno-Catégorie !!</h3>
+                <h3 class="text-center m-10 text-lg md:text-2xl">QuizNoGood est un site web de quiz humoristique et interactif : nos quiz sont variés et parfaits pour vous confronter votre esprit à des connaissances trèèèèèèès utiles ! Alors, qu'attendez-vous ? Testez vos nerfs sur l'une de nos Izno-Catégories !!</h3>
                 <hr class="my-12 md:my-24">
-                <h2 class="text-center text-3xl my-5 md:text-5xl md:my-10">IznoTeam</h2>
+                <h2 class="text-center text-3xl my-5 md:text-5xl md:my-10">QuizNoTeam</h2>
 
                 <div class="grid grid-cols-1 text-center my-12 md:my-24 xl:grid-cols-3 ">
 
@@ -102,10 +102,6 @@
                             <figcaption class="justify-center items-center space-x-1 text-center"> <cite class="pr-2 font-medium">Antoine</cite>|<cite class="pl-1 text-xs">se levant  brusquement</cite></figcaption>
                         </figure>
                     </div>
-                </div>
-                <div class="text-sm italic">
-                    <p>*QI: Quotient intellectuel</p>
-                    <p>*QE: Quotient émotionnel</p>
                 </div>
             </div>
 
