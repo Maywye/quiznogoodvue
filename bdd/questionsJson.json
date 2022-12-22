@@ -41,6 +41,13 @@
       "pseudo": "UwU",
       "avatar": "../assets/img/pfp.png",
       "id": 6
+    },
+    {
+      "email": "quiznoteam@gmail.com",
+      "password": "$2a$10$IL0J5WxZTst1QoACugYK3u3vLUAXIxoixCxkNzP0/39y5tJrk4DxK",
+      "pseudo": "QuizNoTeam",
+      "avatar": "../assets/img/avatar3.png",
+      "id": 7
     }
   ],
   "questions": [
