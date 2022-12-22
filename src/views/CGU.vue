@@ -32,13 +32,13 @@
                             Nous n'avons pas encore de siège social
                         </p>
                         <p class="mb-2 md:mb-5">
-                            Editeur : <span class="font-bold">IznoTeam</span>
+                            Editeur : <span class="font-bold">QuiznoTeam</span>
                             <br>
-                            Exploitation : <span class="font-bold">IznoTeam</span>
+                            Exploitation : <span class="font-bold">QuiznoTeam</span>
                             <br>
-                            Conception : <span class="font-bold">IznoTeam</span>
+                            Conception : <span class="font-bold">QuiznoTeam</span>
                             <br>
-                            Hébergeur : <span class="font-bold">IznoTeam</span>
+                            Hébergeur : <span class="font-bold">QuiznoTeam</span>
                         </p>
                         <p class="mb-2 font-bold md:mb-5" >Coordonnées : </p>
                         <ul class="list-disc list-inside mb-2 bold md:mb-5">
@@ -49,7 +49,7 @@
 
                         <p class="mb-2 font-bold underline md:mb-5">Tous droits d'auteur des textes et oeuvres réservés.</p>
 
-                        <p class="mb-2 md:mb-5">La IznoTeam ne garantit en aucune façon l'exactitude, la précision, l'exhaustivité ou l'adéquation, des informations mises à disposition sur ses sites, y compris l'ensemble des liens hypertextes ou toute autre liaison informatique utilisée, directement ou inderectement, à partir de ce site.</p>
+                        <p class="mb-2 md:mb-5">La QuiznoTeam ne garantit en aucune façon l'exactitude, la précision, l'exhaustivité ou l'adéquation, des informations mises à disposition sur ses sites, y compris l'ensemble des liens hypertextes ou toute autre liaison informatique utilisée, directement ou inderectement, à partir de ce site.</p>
 
                         <p class="mb-2 md:mb-5">Ce site est protégé par le droit d'auteur. L'usage de tout ou partie de ce site, notamment par téléchargement, reproduction, transmission ou représentation sur tous supports et par tous procédés, à d'autres fins que pour usage personnel et privé dans un but non commercial est strictement interdit. </p>
 
@@ -63,7 +63,7 @@
                     <div class="break-words text-sm md:text-lg">
                         <p class="mb-2 md:mb-5">Les présentes conditions générales d'utilisation (dites « CGU ») ont pour objet l'encadrement juridique des modalités de mise à disposition du site et des services par " " et de définir les conditions d'accès et d'utilisation des services par « l'Utilisateur ». Les présentes CGU sont accessibles sur le site à la rubrique «CGU». Toute inscription ou utilisation du site implique l'acceptation sans aucune réserve ni restriction des présentes CGU par l'utilisateur. Lors de l'inscription sur le site via le Formulaire d'inscription, chaque utilisateur accepte expressément les présentes CGU en cochant la case précédant le texte suivant : « Je reconnais avoir lu et compris les CGU et je les accepte ». En cas de non-acceptation des CGU stipulées dans le présent contrat, l'Utilisateur se doit de renoncer à l'accès des services proposés par le site. <strong>Quiznogood</strong> se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes CGU.</p>
                         <h5 class="underline sourceCodeB text-md mb-2 md:text-xl md:mb-5">ARTICLE 1 : Les mentions légales</h5>
-                        <p class="mb-2 md:mb-5">L'édition et la direction de la publication du site quiznogood est assurée par Quiznoteam, domicilié 1 place occitane 31000 Toulouse. <br> Adresse e-mail quiznogood@gmail.com.</p>
+                        <p class="mb-2 md:mb-5">L'édition et la direction de la publication du site quiznogood est assurée par QuQuiznoTeam, domicilié 1 place occitane 31000 Toulouse. <br> Adresse e-mail quiznogood@gmail.com.</p>
                         <h5 class="underline sourceCodeB text-md mb-2 md:text-xl md:mb-5">ARTICLE 2 : Accès au site</h5>
                         <p class="mb-2 md:mb-5">Le site quiznogood permet à l'Utilisateur un accès gratuit aux services suivants :</p>
                         <ul class="list-disc list-inside mb-2 bold md:mb-5">
@@ -103,7 +103,7 @@
                         </ul>
     
                         <p class="font-bold mb-5">Nous reviendrons vers vous via e-mail dans les plus bref delais.</p>
-                        <h5 class="sourceCodeB text-[#502F4C] mb-5 text-xl md:text-2xl">IznoTeam</h5>
+                        <h5 class="sourceCodeB text-[#502F4C] mb-5 text-xl md:text-2xl">QuiznoTeam</h5>
                     </div>
                     
 
