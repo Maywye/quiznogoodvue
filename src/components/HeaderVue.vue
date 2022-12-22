@@ -26,7 +26,7 @@
             <div v-show="modalOpenH" class="flex flex-row justify-center pt-5 lg:justify-end lg:ml-20 lg:mr-2">
                     <ul class="flex flex-row rounded-lg space-x-2 lg:space-x-4 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 lg:p-4 lg:mt-1 ">
                         <li>
-                            <button @click="TOGGLE_MODAL" class="block text-sm text-[#502F4C] bg-[#F9F4F5] rounded-lg border-2 border-[#502F4C] lg:px-8 px-4 lg:text-lg lg:border-4 "> Partie <br> rapide </button>
+                            <button @click="partieRapide" class="block text-sm text-[#502F4C] bg-[#F9F4F5] rounded-lg border-2 border-[#502F4C] lg:px-8 px-4 lg:text-lg lg:border-4 "> Partie <br> rapide </button>
                         </li>
                         <li>
                              <button :disabled="isDisabled" title="Ce n'est pas implémenté" class="block px-4 text-sm font-bold text-[#000000] bg-[#F9F4F5] rounded-lg border-2 border-[#C8B8DB] cursor-not-allowed lg:px-8 lg:text-lg lg:border-4 opacity-25">Partie <br> custom</button>
@@ -40,6 +40,7 @@
 
 <script>
 import { mapMutations, mapGetters, mapActions} from 'vuex'
+import router from '@/router'
 export default {
     name: "TheHeader.vue",
     data(){
@@ -54,11 +55,11 @@ export default {
       toggleModalH() {
             this.modalOpenH = !this.modalOpenH
           },
-      // ...mapActions(["toggleModal"]),
       ...mapMutations(["TOGGLE_MODAL"]),
-      // toogleModalFS() {
-      //   this.$store.commit('TOGGLE_MODAL')
-      // }
+      partieRapide(){
+        this.TOGGLE_MODAL()
+        router.push("/")
+      },
       ...mapActions(["logoutStore"])
     },
     

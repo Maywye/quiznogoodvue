@@ -82,15 +82,22 @@
                 <div class="relative mb-10 bg-[#f4f5f9] rounded-lg p-4 md:col-start-2 md:col-span-4 md:p-12">
                     <div v-show="!questStart">
                         <p class="text-center text-2xl">Choisi ton IznoChallenge</p>
-                        <div class="grid grid-cols-1 gap-y-4 mt-10 md:grid-cols-2 md:gap-x-4 md:gap-y-8 md:my-20 md:mx-5 ">
+                        <div class="grid grid-cols-1 gap-y-4 mt-10 pb-24 md:pb-2 md:grid-cols-2 md:gap-x-4 md:gap-y-8 md:my-20 md:mx-5 ">
                             <span :class="selectedCat == 0 ? selectedCateg : unselectedCateg" @click="selectCat(0)">Izno - Geek</span>
                             <span :class="selectedCat == 1 ? selectedCateg : unselectedCateg" @click="selectCat(1)">Izno - Snob</span>
                             <span :class="selectedCat == 2 ? selectedCateg : unselectedCateg" @click="selectCat(2)">Izno - Culturé</span>
                             <span :class="selectedCat == 3 ? selectedCateg : unselectedCateg" @click="selectCat(3)">Izno - Dév</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="En construction (mathématique)">Izno - Math</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="work in progress">Izno - Anglais</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="historiquement faux, mais ça arrive 👍">Izno - Histoire</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="on a pas encore décidé entre géometrie et geographie... (ou géologie ‽‽‽‽‽)">Izno - Géo</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="on est trop vieux pour trouver ces questions">Izno - Djeun's</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="on est trop jeunes vieux pour trouver ces questions">Izno - Anciens</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="ce sera un quiz sur les remix funk de morceaux de rap, et rien d'autre😤">Izno - Musique</span>
                             <span :class="selectedCat == 4 ? selectedCateg : unselectedCateg" @click="selectCat(4)">Aléatoire</span>
 
                         </div>
-                        <button  class="px-6 py-2 bg-[#502F4C] rounded-lg absolute bottom-8 left-5 md:px-12 md:py-4 md:bottom-6" @click="triche"> 
+                        <button v-show="false" class="px-6 py-2 bg-[#502F4C] rounded-lg absolute bottom-8 left-5 md:px-12 md:py-4 md:bottom-6" @click="triche"> 
                             <span class="text-lg italic text-[#F9F4F5] italic md:text-2xl">Triche</span> 
                         </button>
                         <button  class="px-6 py-2 bg-[#502F4C] rounded-lg absolute bottom-8 right-5 md:px-12 md:py-4 md:bottom-6" @click="questAllGet"> 
@@ -215,7 +222,6 @@ export default {
                 setTimeout(() => this.statusRep = "", 1250);
             }
             this.recapQuest()
-            console.log(this.questRecap[0].ordre);
             this.selectedRep = -1
             setTimeout(() => {
                 if (this.totalRep < 9) {

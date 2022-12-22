@@ -35,7 +35,6 @@ const store = new VueX.Store({
     mutations: {
         TOGGLE_MODAL(state){
             state.modalOpen = !state.modalOpen
-            router.push("/")
         },
         SET_CURRENT_USER(state, res){
             state.currentUser = res
@@ -51,7 +50,6 @@ const store = new VueX.Store({
         },
         SET_AVATAR(state, avatarSrc) {
             state.currentUser.avatar = avatarSrc
-            console.log(state.currentUser)
         },
         CHANGE_NP(state, np){
             state.np = np
