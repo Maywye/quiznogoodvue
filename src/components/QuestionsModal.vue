@@ -62,38 +62,39 @@
                 
                 <a href="#" class="flex items-center">
                     <img @click="fermer()" alt="logo" id="logo"  src="../../public/assets/img/logo.png" class=" mr-3 mt-10 h-9 md:h-12">
-                </a>
-                <span v-show="cdwnStart" class="text-[#f4f5f9] text-4xl mt-5 mx-32 md:mx-20 font-bold calibri">
-                    <div id="countdown">
-                    <div id="countdown-number">{{countDown}}</div>
-                    <svg>
-                        <circle :class="questCatCurrent == 'Izno - Snob' ? 'troisCinq' : 'deuxZer'" r="36" cx="40" cy="40"></circle>
-                        <set restart="always"/>
-                    </svg>
-                    </div>
+                </a>            
+            </div>
+            <div class="grid grid-cols-6 mb-10 lg:grid-cols-3">
+                <h3 v-show="questStart" class="text-2xl ml-3 mt-14 p-1 text-center text-[#f4f5f9] col-start-1 col-span-3 lg:col-start-2 lg:col-span-1 md:p-12 md:text-5xl">QUESTION <span class="ml-10 text-xl md:text-5xl">{{totalRep+1}}</span></h3>
+                <h3 v-show="!questStart" class="text-xl p-9 align-middle text-center text-[#f4f5f9] col-start-1 col-span-6 lg:col-start-1 md:p-12 md:text-5xl">PRÊT À SOUFFRIR, {{pseudo == '' ? "NAMELESS LOSER" : pseudo.toUpperCase()}} ?</h3>
+                <span v-show="cdwnStart" class="text-[#f4f5f9] text-4xl md:mt-14 mx-4 md:mx-14 font-bold calibri col-start-5 col-span-3 lg:col-start-3">
+                        <div id="countdown">
+                        <div id="countdown-number">{{countDown}}</div>
+                        <svg>
+                            <circle :class="questCatCurrent == 'Izno - Snob' ? 'troisCinq' : 'deuxZer'" r="36" cx="40" cy="40"></circle>
+                            <set restart="always"/>
+                        </svg>
+                        </div>
                 </span>
-                
+
             </div>
 
-            <h3 v-show="questStart" class="text-xl p-9 text-center text-[#f4f5f9] md:p-12 md:text-5xl">QUESTION <span class="ml-10 text-xl md:text-5xl">{{totalRep+1}}</span></h3>
-            <h3 v-show="!questStart" class="text-xl p-9 text-center text-[#f4f5f9] md:p-12 md:text-5xl">PRÊT À SOUFFRIR, {{pseudo == '' ? "NAMELESS LOSER" : pseudo.toUpperCase()}} ?</h3>
-
             <div class="grid grid-cols-1 h-5/6 mx-10 md:mx-auto md:h-4/6 md:grid-cols-6 md:mt-5">
-                <div class="relative mb-10 bg-[#f4f5f9] rounded-lg p-4 md:col-start-2 md:col-span-4 md:p-12">
+                <div class="relative mb-10 bg-[#f4f5f9] rounded-lg p-4 md:col-start-2 md:col-span-4 md:p-6">
                     <div v-show="!questStart">
-                        <p class="text-center text-2xl">Choisi ton IznoChallenge</p>
+                        <p class="text-center sourceCodeB text-2xl">Choisi ton IznoChallenge</p>
                         <div class="grid grid-cols-1 gap-y-4 mt-10 pb-24 md:pb-2 md:grid-cols-2 md:gap-x-4 md:gap-y-8 md:my-20 md:mx-5 ">
                             <span :class="selectedCat == 0 ? selectedCateg : unselectedCateg" @click="selectCat(0)">Izno - Geek</span>
                             <span :class="selectedCat == 1 ? selectedCateg : unselectedCateg" @click="selectCat(1)">Izno - Snob</span>
                             <span :class="selectedCat == 2 ? selectedCateg : unselectedCateg" @click="selectCat(2)">Izno - Culturé</span>
                             <span :class="selectedCat == 3 ? selectedCateg : unselectedCateg" @click="selectCat(3)">Izno - Dév</span>
-                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="En construction (mathématique)">Izno - Math</span>
-                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="work in progress">Izno - Anglais</span>
-                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="historiquement faux, mais ça arrive 👍">Izno - Histoire</span>
-                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="on a pas encore décidé entre géometrie et geographie... (ou géologie ‽‽‽‽‽)">Izno - Géo</span>
-                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="on est trop vieux pour trouver ces questions">Izno - Djeun's</span>
-                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="on est trop jeunes vieux pour trouver ces questions">Izno - Anciens</span>
-                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10 cursor-not-allowed opacity-25" title="ce sera un quiz sur les remix funk de morceaux de rap, et rien d'autre😤">Izno - Musique</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl cursor-not-allowed opacity-25" title="En construction (mathématique)">Izno - Math</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl cursor-not-allowed opacity-25" title="work in progress">Izno - Anglais</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl cursor-not-allowed opacity-25" title="historiquement faux, mais ça arrive 👍">Izno - Histoire</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl cursor-not-allowed opacity-25" title="on a pas encore décidé entre géometrie et geographie... (ou géologie ‽‽‽‽‽)">Izno - Géo</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl cursor-not-allowed opacity-25" title="on est trop vieux pour trouver ces questions">Izno - Djeun's</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl cursor-not-allowed opacity-25" title="on est trop jeunes vieux pour trouver ces questions">Izno - Anciens</span>
+                            <span class="p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl cursor-not-allowed opacity-25" title="ce sera un quiz sur les remix funk de morceaux de rap, et rien d'autre😤">Izno - Musique</span>
                             <span :class="selectedCat == 4 ? selectedCateg : unselectedCateg" @click="selectCat(4)">Aléatoire</span>
 
                         </div>
@@ -166,10 +167,10 @@ export default {
             questDisplay : "",
             questRecapDisplay : false,
 
-            unselected: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCode rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10",
-            selected: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCode rounded-lg cursor-pointer quest md:text-xl md:ml-10 lg:text-2xl",
-            unselectedCateg: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl md:ml-10",
-            selectedCateg: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer quest md:text-xl md:ml-10 lg:text-2xl",
+            unselected: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCode rounded-lg cursor-pointer md:text-xl lg:text-2xl",
+            selected: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCode rounded-lg cursor-pointer quest md:text-xl lg:text-2xl",
+            unselectedCateg: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer md:text-xl lg:text-2xl",
+            selectedCateg: "p-4 text-md break-words bg-[#C8B8DB] text-center sourceCodeB rounded-lg cursor-pointer quest md:text-xl lg:text-2xl",
 
         };
     },

@@ -75,7 +75,7 @@ const store = new VueX.Store({
                 commit("SET_TOKEN", res.data.accessToken)
                 localStorage.setItem("userId", res.data.user.id)
                 // commit("LOGIN")
-                alert("Connection réussie !")
+                alert("Connexion réussie !")
                 router.push({path:'profile'})
             }).catch((e) => {
                 console.error(e)
