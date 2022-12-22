@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#F9F4F5] rounded-lg col-start-2 col-span-10 md:col-start-2 md:col-span-5 my-12 md:mr-16 md:ml-0 p-10">
+    <div class="bg-[#F9F4F5] rounded-lg col-start-2 col-span-10 lg:col-start-2 lg:col-span-5 my-12 lg:mr-16 lg:ml-0 p-10">
             <h2 class="text-center p-3 md:text-5xl">Connexion</h2>
             <p class="text-center sourceCode md:text-sm">Afin de profiter d'un large choix de quizz</p>
             <form @submit.prevent="logIn" class="grid grid-cols-1 place-content-around md:my-12 md:mx-24">

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#F9F4F5] rounded-lg col-start-2 col-span-10 md:col-start-7 md:col-span-5 my-12 md:ml-16 md:mr-0 p-10">
+    <div class="bg-[#F9F4F5] rounded-lg col-start-2 col-span-10 lg:col-start-7 lg:col-span-5 my-12 lg:ml-16 lg:mr-0 p-10">
             <h2 class="text-center p-3 md:text-5xl">Inscription</h2>
             <form @submit.prevent="signIn" class="grid grid-cols-1 place-content-around md:my-12 md:mx-24">
                 <label for="Pseudo" class="ml-4 md:text-lg text-[#502F4C] font-medium">Pseudo <span class="text-sm hover:text-base">( Choisi bien, tu ne pourras pas le modifier )</span></label>
